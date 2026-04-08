@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog post — Saikat Bandyopadhyay">
+  <title>Blog Post — Saikat Bandyopadhyay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js" defer></script>
+
+  <style>
+    .post-article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .post-header {
+      margin-bottom: var(--space-xl);
+    }
+    .post-title {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-md);
+    }
+    .post-meta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    .post-meta time {
+      color: var(--accent);
+      font-family: var(--font-mono);
+    }
+    .post-body {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      line-height: 1.85;
+    }
+    .post-body h1, .post-body h2, .post-body h3 {
+      color: var(--text-primary);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+    }
+    .post-body h2 { font-size: 1.5rem; }
+    .post-body h3 { font-size: 1.25rem; }
+    .post-body p { margin-bottom: var(--space-md); }
+    .post-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-body code {
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.15em 0.4em;
+      border-radius: var(--radius-sm);
+      font-size: 0.9em;
+    }
+    .post-body pre {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      overflow-x: auto;
+      margin-bottom: var(--space-md);
+    }
+    .post-body pre code {
+      background: none;
+      padding: 0;
+    }
+    .post-body blockquote {
+      border-left: 3px solid var(--gradient-mid);
+      padding-left: var(--space-md);
+      color: var(--accent);
+      font-style: italic;
+      margin: var(--space-md) 0;
+    }
+    .post-body ul, .post-body ol {
+      padding-left: var(--space-lg);
+      margin-bottom: var(--space-md);
+    }
+    .post-body li { margin-bottom: var(--space-sm); }
+    .post-body img {
+      max-width: 100%;
+      border-radius: var(--radius-md);
+      margin: var(--space-md) 0;
+    }
+    .post-back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: var(--space-lg);
+      transition: color var(--transition-fast);
+    }
+    .post-back:hover { color: var(--text-primary); }
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-xl);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--glass-border);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <header>
+    <nav class="main-nav nav-scrolled" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo gradient-text">SB</a>
+        <ul class="nav-links">
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="section" style="padding-top: calc(var(--space-2xl) + 4rem);">
+      <div class="container">
+        <article class="post-article">
+          <a href="../blog.html" class="post-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to all posts
+          </a>
+          <div class="post-header">
+            <h1 class="post-title gradient-text" id="post-title">Loading...</h1>
+            <div class="post-meta">
+              <time id="post-date"></time>
+              <span id="post-reading-time"></span>
+            </div>
+          </div>
+          <div class="post-body" id="post-body">
+            <p>Loading post content...</p>
+          </div>
+          <div class="post-tags" id="post-tags"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Saikat Bandyopadhyay. Crafted with purpose.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('slug');
+      if (!slug) {
+        document.getElementById('post-title').textContent = 'Post not found';
+        return;
+      }
+
+      fetch('posts/index.json')
+        .then(function(r) { return r.json(); })
+        .then(function(posts) {
+          var post = posts.find(function(p) { return p.slug === slug; });
+          if (!post) {
+            document.getElementById('post-title').textContent = 'Post not found';
+            return;
+          }
+
+          document.title = post.title + ' — Saikat Bandyopadhyay';
+          document.getElementById('post-title').textContent = post.title;
+          document.getElementById('post-date').textContent = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+          document.getElementById('post-reading-time').textContent = post.readingTime;
+
+          var tagsContainer = document.getElementById('post-tags');
+          post.tags.forEach(function(tag) {
+            var badge = document.createElement('span');
+            badge.className = 'tech-badge';
+            badge.textContent = tag;
+            tagsContainer.appendChild(badge);
+          });
+
+          return fetch('posts/' + post.file);
+        })
+        .then(function(r) { return r.text(); })
+        .then(function(md) {
+          // Strip frontmatter
+          var content = md.replace(/^---[\s\S]*?---\s*/, '');
+          if (typeof marked !== 'undefined') {
+            document.getElementById('post-body').innerHTML = marked.parse(content);
+          } else {
+            document.getElementById('post-body').innerHTML = '<pre>' + content + '</pre>';
+          }
+        })
+        .catch(function() {
+          document.getElementById('post-body').innerHTML = '<p>Error loading post content.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

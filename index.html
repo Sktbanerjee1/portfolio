@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saikat Bandyopadhyay — Computational Biologist & Health AI Engineer. Decoding the language of life to end human suffering.">
+  <meta property="og:title" content="Saikat Bandyopadhyay — Portfolio">
+  <meta property="og:description" content="Decoding the language of life to end human suffering. Computational Biology, Healthcare AI, Multi-Omics Integration.">
+  <meta property="og:type" content="website">
+  <title>Saikat Bandyopadhyay — Computational Biologist & Health AI Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
+</head>
+<body>
+  <!-- Skip Navigation -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <!-- Three.js Canvas Background -->
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo gradient-text">SB</a>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Journey</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#blog-preview" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- ============================== -->
+    <!-- HERO SECTION -->
+    <!-- ============================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <p class="hero-greeting reveal-up">Hello, I'm</p>
+        <h1 class="hero-name gradient-text reveal-up">Saikat Bandyopadhyay</h1>
+        <div class="hero-typed-wrapper reveal-up">
+          <span class="hero-typed-prefix">I'm a </span>
+          <span id="typed-output"></span>
+        </div>
+        <p class="hero-tagline reveal-up">Decoding the language of life to end human suffering</p>
+        <div class="hero-cta-group reveal-up">
+          <a href="#projects" class="hero-cta">
+            Explore My Mission
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#contact" class="hero-cta-secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- ABOUT SECTION -->
+    <!-- ============================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">The Vision</h2>
+
+        <div class="about-grid">
+          <div class="about-bio reveal-up">
+            <p class="about-text">
+              My core interest is in building causal models of health governance &mdash; systems that predict health risk by integrating molecular data with environmental exposures.
+            </p>
+            <p class="about-text">
+              Most modern diseases emerge from the crosstalk between the genome and the environment. My work aims to develop computational frameworks that map how gene-environment interactions shape disease risk, moving from a reactive health management system to a preventive one.
+            </p>
+            <p class="about-text">
+              I believe the same computational frameworks that decode disease through the lens of daily life can transform habit data, lifestyle patterns, and behavioral signals into personalized, actionable guidance promoting healthier living.
+            </p>
+            <p class="about-text accent-quote">
+              Mission: Use data to decode the language of life and disease.
+            </p>
+          </div>
+          <div class="about-highlights stagger-container">
+            <div class="glass-card highlight-card">
+              <div class="highlight-card-header">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                  </svg>
+                </div>
+                <h3 class="highlight-label">Causal Modeling</h3>
+              </div>
+              <p class="highlight-value">Predicting health risk through integration of molecular and environmental data</p>
+            </div>
+            <div class="glass-card highlight-card">
+              <div class="highlight-card-header">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2C12 2 8 6 8 10C8 12.21 9.79 14 12 14C14.21 14 16 12.21 16 10C16 6 12 2 12 2Z"></path>
+                    <path d="M12 14V22"></path>
+                    <path d="M8 18H16"></path>
+                  </svg>
+                </div>
+                <h3 class="highlight-label">Gene &times; Environment</h3>
+              </div>
+              <p class="highlight-value">Mapping how genomic and environmental interactions shape disease risk</p>
+            </div>
+            <div class="glass-card highlight-card">
+              <div class="highlight-card-header">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <h3 class="highlight-label">Lifestyle Intelligence</h3>
+              </div>
+              <p class="highlight-value">Turning daily habit data into actionable guidance for healthier living</p>
+            </div>
+            <div class="glass-card highlight-card">
+              <div class="highlight-card-header">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                    <line x1="14" y1="4" x2="10" y2="20"></line>
+                  </svg>
+                </div>
+                <h3 class="highlight-label">Scalable Tech</h3>
+              </div>
+              <p class="highlight-value">Robust, sustainable pipelines built on Nextflow, Snakemake, and HPC infrastructure</p>
+            </div>
+            <div class="glass-card highlight-card">
+              <div class="highlight-card-header">
+                <div class="highlight-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </div>
+                <h3 class="highlight-label">FAIR Governance</h3>
+              </div>
+              <p class="highlight-value">Findable, Accessible, Interoperable, Reusable data stewardship by design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- PROJECTS SECTION -->
+    <!-- ============================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">Projects</h2>
+        <p class="section-subtitle"></p>
+        <div class="projects-grid stagger-container">
+
+          <!-- Project 1: RAPID-CT -->
+          <article class="glass-card project-card featured-project">
+            <div class="project-badge">Featured</div>
+            <div class="project-header">
+              <h3 class="project-title">RAPID-CT: AI-Powered Brain Hemorrhage Detection</h3>
+            </div>
+            <p class="project-desc">Deep learning framework detecting Intracranial Hemorrhage from brain CT scans using segmentation-based ResNet architecture. Engineered a PII-blind REST API with split-key encryption for clinical deployment.</p>
+            <p class="project-outcome"><strong>Impact:</strong> High-precision ICH classification with privacy-preserving clinical deployment</p>
+            <div class="project-tech">
+              <span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">ResNet</span>
+              <span class="tech-badge">Medical Imaging</span>
+              <span class="tech-badge">REST API</span>
+              <span class="tech-badge">Encryption</span>
+            </div>
+          </article>
+
+          <!-- Project 2: Colocalization -->
+          <article class="glass-card project-card">
+            <div class="project-header">
+              <h3 class="project-title">Causal Gene Discovery Pipeline</h3>
+            </div>
+            <p class="project-desc">Computational colocalization pipeline integrating GWAS and bulk RNA-seq eQTL data to identify candidate causal genes in Diversity Outbred mice. Implemented conditional analysis with bootstrapping to validate concordance between signals.</p>
+            <p class="project-outcome"><strong>Impact:</strong> Identified novel causal gene candidates at significantly associated loci</p>
+            <div class="project-tech">
+              <span class="tech-badge">R</span>
+              <span class="tech-badge">coloc</span>
+              <span class="tech-badge">bnlearn</span>
+              <span class="tech-badge">GWAS</span>
+              <span class="tech-badge">eQTL</span>
+              <span class="tech-badge">HPC/SLURM</span>
+            </div>
+          </article>
+
+          <!-- Project 3: Proteogenomics -->
+          <article class="glass-card project-card">
+            <div class="project-header">
+              <h3 class="project-title">Proteogenomics: Beyond the Reference Proteome</h3>
+            </div>
+            <p class="project-desc">Nextflow-based pipeline integrating long-read RNA sequencing with mass spectrometry to discover novel transcript isoforms and protein products absent from GENCODE annotations.</p>
+            <p class="project-outcome"><strong>Impact:</strong> Identified novel protein isoforms absent from GENCODE reference</p>
+            <div class="project-tech">
+              <span class="tech-badge">Nextflow</span>
+              <span class="tech-badge">Long-Read Seq</span>
+              <span class="tech-badge">Mass Spectrometry</span>
+              <span class="tech-badge">Proteomics</span>
+            </div>
+          </article>
+
+          <!-- Project 4: Single-Cell -->
+          <article class="glass-card project-card">
+            <div class="project-header">
+              <h3 class="project-title">Single-Cell Trajectory Analysis of Bone Marrow</h3>
+            </div>
+            <p class="project-desc">Pseudotime trajectory analysis on single-cell RNA-seq data characterizing gene expression dynamics along osteoblast and osteoclast differentiation &mdash; mapping the molecular choreography of bone formation.</p>
+            <p class="project-outcome"><strong>Impact:</strong> Mapped differentiation trajectories and prioritized causal genes via network hub overlap</p>
+            <div class="project-tech">
+              <span class="tech-badge">Slingshot</span>
+              <span class="tech-badge">scRNA-seq</span>
+              <span class="tech-badge">WGCNA</span>
+              <span class="tech-badge">Bayesian Networks</span>
+            </div>
+          </article>
+
+          <!-- Project 5: LP-WGS -->
+          <article class="glass-card project-card">
+            <div class="project-header">
+              <h3 class="project-title">Low-Pass WGS Processing Pipeline</h3>
+            </div>
+            <p class="project-desc">High-throughput processing pipeline for Low-Pass Whole Genome Sequencing achieving 15% reduction in genotyping costs while maintaining fidelity for downstream haplotype calling and eQTL analysis.</p>
+            <p class="project-outcome"><strong>Impact:</strong> 15% reduction in genotyping costs with preserved data fidelity</p>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Bash</span>
+              <span class="tech-badge">SLURM</span>
+              <span class="tech-badge">WGS</span>
+              <span class="tech-badge">Imputation</span>
+            </div>
+          </article>
+
+          <!-- Project 6: FAIR -->
+          <article class="glass-card project-card">
+            <div class="project-header">
+              <h3 class="project-title">FAIR Data Governance Framework</h3>
+            </div>
+            <p class="project-desc">Architected a standardized data governance framework enforcing FAIR principles across all research data assets &mdash; transforming an unstructured research environment into a reproducible, audit-ready ecosystem.</p>
+            <p class="project-outcome"><strong>Impact:</strong> Transformed unstructured research into reproducible ecosystem</p>
+            <div class="project-tech">
+              <span class="tech-badge">FAIR Principles</span>
+              <span class="tech-badge">Data Governance</span>
+              <span class="tech-badge">ETL</span>
+              <span class="tech-badge">Metadata Standards</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SKILLS SECTION -->
+    <!-- ============================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">Skills</h2>
+        <p class="section-subtitle"></p>
+
+        <div class="skills-grid stagger-container">
+
+          <div class="glass-card skill-group">
+            <h3 class="skill-group-title">Statistical Genetics & Causal Inference</h3>
+            <div class="skill-badges">
+              <span class="tech-badge">GWAS</span>
+              <span class="tech-badge">eQTL Mapping</span>
+              <span class="tech-badge">Colocalization</span>
+              <span class="tech-badge">Bayesian Networks</span>
+              <span class="tech-badge">Bootstrapping</span>
+              <span class="tech-badge">Mendelian Randomization</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-group">
+            <h3 class="skill-group-title">Genomics & Multi-Omics</h3>
+            <div class="skill-badges">
+              <span class="tech-badge">WGS/LP-WGS</span>
+              <span class="tech-badge">Long-Read RNA-seq</span>
+              <span class="tech-badge">Proteogenomics</span>
+              <span class="tech-badge">Variant Calling</span>
+              <span class="tech-badge">Genotype Imputation</span>
+              <span class="tech-badge">Epigenomics</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-group">
+            <h3 class="skill-group-title">Single-Cell & Network Biology</h3>
+            <div class="skill-badges">
+              <span class="tech-badge">scRNA-seq</span>
+              <span class="tech-badge">Slingshot</span>
+              <span class="tech-badge">WGCNA</span>
+              <span class="tech-badge">Cell-Type Deconvolution</span>
+              <span class="tech-badge">Hub Gene ID</span>
+              <span class="tech-badge">Gene Regulatory Networks</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-group">
+            <h3 class="skill-group-title">Deep Learning & AI</h3>
+            <div class="skill-badges">
+              <span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">ResNet</span>
+              <span class="tech-badge">Medical Image Segmentation</span>
+              <span class="tech-badge">Clinical NLP</span>
+              <span class="tech-badge">REST API Deployment</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-group">
+            <h3 class="skill-group-title">Pipeline Engineering</h3>
+            <div class="skill-badges">
+              <span class="tech-badge">Nextflow</span>
+              <span class="tech-badge">Snakemake</span>
+              <span class="tech-badge">SLURM/HPC</span>
+              <span class="tech-badge">FAIR Governance</span>
+              <span class="tech-badge">Illumina DRAGEN</span>
+              <span class="tech-badge">ETL Frameworks</span>
+            </div>
+          </div>
+
+          <div class="glass-card skill-group">
+            <h3 class="skill-group-title">Programming & Tools</h3>
+            <div class="skill-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">R</span>
+              <span class="tech-badge">Bash</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">Linux/Unix</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Jupyter</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- EXPERIENCE / JOURNEY SECTION -->
+    <!-- ============================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">Journey</h2>
+        <p class="section-subtitle"></p>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Computational Biology Research Fellow</h3>
+                <span class="timeline-period">Aug 2024 &mdash; Present</span>
+              </div>
+              <p class="timeline-company">University of Virginia &mdash; Dept. of Genome Sciences</p>
+              <ul class="timeline-bullets">
+                <li>Developed colocalization pipeline integrating GWAS and eQTL data for causal gene discovery with conditional analysis and bootstrapping validation</li>
+                <li>Constructed cell-type-specific WGCNA modules and identified hub genes via Bayesian network analysis</li>
+                <li>Performed pseudotime trajectory analysis on scRNA-seq data mapping osteoblast/osteoclast differentiation</li>
+                <li>Optimized HPC parallelization pipelines, reducing runtime by 24 hours per batch</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Senior Data Analyst</h3>
+                <span class="timeline-period">Sep 2022 &mdash; Jul 2024</span>
+              </div>
+              <p class="timeline-company">University of Virginia &mdash; Dept. of Genome Sciences</p>
+              <ul class="timeline-bullets">
+                <li>Built LP-WGS processing pipeline achieving 15% reduction in genotyping costs</li>
+                <li>Deployed Nextflow-based Proteogenomics pipeline discovering novel transcript isoforms beyond GENCODE</li>
+                <li>Architected FAIR data governance framework transforming research data into reproducible ecosystem</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Bioinformatician, Assay Productization</h3>
+                <span class="timeline-period">Oct 2021 &mdash; Jun 2022</span>
+              </div>
+              <p class="timeline-company">PierianDx</p>
+              <ul class="timeline-bullets">
+                <li>Designed clinical genomics pipelines for variant calling at production scale with Illumina DRAGEN</li>
+                <li>Developed resource allocation engine optimizing engineering team deployment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role">IT Consultant</h3>
+                <span class="timeline-period">Oct 2020 &mdash; Sep 2021</span>
+              </div>
+              <p class="timeline-company">Governing Health Futures 2030</p>
+              <ul class="timeline-bullets">
+                <li>Delivered strategic architectural guidance on digital health ecosystems for global public health initiative</li>
+                <li>Performed code reviews and architectural assessments aligning public health objectives with engineering</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Senior Project Associate</h3>
+                <span class="timeline-period">Nov 2018 &mdash; Sep 2021</span>
+              </div>
+              <p class="timeline-company">CSIR-IGIB &mdash; Institute of Genomics and Integrative Biology</p>
+              <ul class="timeline-bullets">
+                <li>Developed RAPID-CT deep learning framework for Intracranial Hemorrhage detection from brain CT scans</li>
+                <li>Engineered PII-blind REST API with split-key encryption for privacy-preserving clinical inference</li>
+                <li>Built automated pipelines and dashboards for TCGA/CPTAC data democratization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker"></div>
+            <div class="glass-card timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Bioinformatics Intern</h3>
+                <span class="timeline-period">Sep 2018 &mdash; Nov 2018</span>
+              </div>
+              <p class="timeline-company">Elucidata Corporation</p>
+              <ul class="timeline-bullets">
+                <li>Engineered client-facing dashboard modules for cancer genomics data integrated into production SaaS platform</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- PUBLICATIONS SECTION -->
+    <!-- ============================== -->
+    <section id="publications" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">Published Works</h2>
+        <p class="section-subtitle"></p>
+
+        <div class="publications-list stagger-container">
+
+          <article class="glass-card publication-card">
+            <div class="pub-year">2025</div>
+            <div class="pub-content">
+              <h3 class="pub-title">The septin cytoskeleton is a regulator of intestinal epithelial barrier integrity and mucosal inflammation</h3>
+              <p class="pub-journal"><em>JCI Insight</em>, 10(22):e191538</p>
+              <a href="https://doi.org/10.1172/jci.insight.191538" target="_blank" rel="noopener noreferrer" class="pub-doi">DOI: 10.1172/jci.insight.191538</a>
+            </div>
+          </article>
+
+          <article class="glass-card publication-card">
+            <div class="pub-year">2024</div>
+            <div class="pub-content">
+              <h3 class="pub-title">IS-PRM-Based Peptide Targeting Informed by Long-Read Sequencing for Alternative Proteome Detection</h3>
+              <p class="pub-journal"><em>Journal of the American Society for Mass Spectrometry</em>, 35(11):2614&ndash;2630</p>
+              <a href="https://doi.org/10.1021/jasms.4c00119" target="_blank" rel="noopener noreferrer" class="pub-doi">DOI: 10.1021/jasms.4c00119</a>
+            </div>
+          </article>
+
+          <article class="glass-card publication-card">
+            <div class="pub-year">2020</div>
+            <div class="pub-content">
+              <h3 class="pub-title">Application of Computer Assisted Bimolecular Interaction Modelling in Predictive Microbiology</h3>
+              <p class="pub-journal"><em>Journal of Advanced Microbiology</em>, 4(1):59&ndash;69</p>
+              <a href="https://doi.org/10.5530/jam.4.1.5" target="_blank" rel="noopener noreferrer" class="pub-doi">DOI: 10.5530/jam.4.1.5</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Awards -->
+        <div class="awards-section reveal-up">
+          <h3 class="awards-title gradient-text">Honors & Recognition</h3>
+          <div class="awards-grid stagger-container">
+            <div class="glass-card award-card">
+              <span class="award-icon" aria-hidden="true">&#9733;</span>
+              <p class="award-text">Reviewer's Choice Abstract &mdash; ASHG Annual Meeting, 2025</p>
+            </div>
+            <div class="glass-card award-card">
+              <span class="award-icon" aria-hidden="true">&#9733;</span>
+              <p class="award-text">Precision Health Initiative Trainee Stipend &mdash; University of Virginia, 2025</p>
+            </div>
+            <div class="glass-card award-card">
+              <span class="award-icon" aria-hidden="true">&#9733;</span>
+              <p class="award-text">Best Poster Award &mdash; National Workshop on Big Data & AI in Healthcare, 2019</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- BLOG PREVIEW SECTION -->
+    <!-- ============================== -->
+    <section id="blog-preview" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">Blog</h2>
+        <p class="section-subtitle"></p>
+
+        <div class="blog-preview-grid stagger-container" id="blog-preview-posts">
+          <!-- Populated by script.js -->
+        </div>
+
+        <div class="blog-view-all reveal-up">
+          <a href="blog.html" class="hero-cta-secondary">View All Posts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- CONTACT SECTION -->
+    <!-- ============================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-heading gradient-text">Let's Build the Future</h2>
+        <p class="section-subtitle">Whether you're fighting disease with data or building the next generation of health AI &mdash; let's talk.</p>
+
+        <div class="contact-layout reveal-up">
+
+          <!-- Contact Form -->
+          <div class="glass-card contact-form-card">
+            <h3 class="contact-form-title">Send Me a Message</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Jane Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="jane@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-reason" class="form-label">Reason for Reaching Out</label>
+                <select id="contact-reason" name="reason" class="form-input form-select" required>
+                  <option value="" disabled selected>Select a reason...</option>
+                  <option value="Job Opportunity">Job Opportunity</option>
+                  <option value="Collaboration">Research / Project Collaboration</option>
+                  <option value="Public Talk">Invitation to Speak / Public Talk</option>
+                  <option value="Consulting">Consulting Inquiry</option>
+                  <option value="General">General Question / Say Hello</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Tell me what you have in mind..." rows="5" required></textarea>
+              </div>
+              <button type="submit" class="form-submit hero-cta">
+                Compose Email
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+              <p class="form-note">This will open your email client with a pre-filled message.</p>
+            </form>
+          </div>
+
+          <!-- Social & Info Sidebar -->
+          <div class="glass-card contact-card">
+            <div class="contact-info">
+              <h3 class="contact-form-title">Connect Directly</h3>
+              <a href="mailto:saikat.bandyopadhyay.dsx@gmail.com" class="contact-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                saikat.bandyopadhyay.dsx@gmail.com
+              </a>
+              <div class="contact-social">
+                <a href="https://github.com/Sktbanerjee1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com/in/sbandyopadhyay" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <!-- TODO: Replace with your Google Scholar URL -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Google Scholar">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p class="contact-closing">Based in Charlottesville, VA. Open to Healthcare AI, BioML, and Data Science opportunities.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Saikat Bandyopadhyay.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

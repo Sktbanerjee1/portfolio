@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "name": "Saikat Bandyopadhyay",
+    "title": "Computational Biologist & Health AI Engineer",
+    "tagline": "Decoding the language of life to end human suffering",
+    "email": "saikat.bandyopadhyay.dsx@gmail.com",
+    "location": "Charlottesville, VA",
+    "avatar": "assets/avatar.jpg",
+    "social": {
+      "github": "https://github.com/Sktbanerjee1",
+      "linkedin": "https://linkedin.com/in/sbandyopadhyay",
+      "scholar": "[REPLACE] https://scholar.google.com/citations?user=YOUR_ID"
+    }
+  },
+  "hero": {
+    "typed_strings": [
+      "Computational Biologist",
+      "ML Engineer",
+      "Pipeline Architect",
+      "Health Data Scientist"
+    ],
+    "cta_text": "Explore My Mission",
+    "cta_link": "#projects"
+  },
+  "about": {
+    "bio": "I believe every genome holds a story of suffering that computation can help rewrite. From detecting brain hemorrhages with deep learning to tracing the causal architecture of disease through multi-omics, my work lives at the frontier where algorithms meet human healing. I build scalable, reproducible pipelines that transform raw biological signal into actionable clinical insight — because the distance between a sequencer's output and a patient's cure should be measured in code, not years.",
+    "highlights": [
+      {
+        "icon": "dna",
+        "label": "Mission",
+        "value": "Translating multi-omics data into cures through computational biology & AI"
+      },
+      {
+        "icon": "code",
+        "label": "Stack",
+        "value": "Python, R, PyTorch, Nextflow, GSAP, Three.js"
+      },
+      {
+        "icon": "graduation-cap",
+        "label": "Education",
+        "value": "MS Biological Sciences, University of Virginia (2026)"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "RAPID-CT: AI-Powered Brain Hemorrhage Detection",
+      "description": "Deep learning framework detecting Intracranial Hemorrhage from brain CT scans using segmentation-based ResNet architecture. Engineered a PII-blind REST API with split-key encryption for clinical deployment — because no patient should wait for a diagnosis while their data waits for permission.",
+      "tech": ["PyTorch", "ResNet", "Medical Imaging", "REST API", "Encryption"],
+      "outcome": "High-precision ICH classification with privacy-preserving clinical deployment",
+      "github": "[REPLACE] https://github.com/...",
+      "demo": "",
+      "image": "assets/rapid-ct.png"
+    },
+    {
+      "title": "Causal Gene Discovery Pipeline",
+      "description": "Computational colocalization pipeline integrating GWAS and bulk RNA-seq eQTL data to identify candidate causal genes in Diversity Outbred mice. Implemented conditional analysis with bootstrapping to validate concordance between conditional and colocalization signals.",
+      "tech": ["R", "coloc", "bnlearn", "GWAS", "eQTL", "HPC/SLURM"],
+      "outcome": "Identified novel causal gene candidates at significantly associated loci",
+      "github": "[REPLACE] https://github.com/...",
+      "demo": "",
+      "image": "assets/colocalization.png"
+    },
+    {
+      "title": "Proteogenomics: Beyond the Reference Genome",
+      "description": "Nextflow-based pipeline integrating long-read RNA sequencing with mass spectrometry to discover novel transcript isoforms and protein products absent from GENCODE annotations. Rewriting what we thought we knew about the proteome.",
+      "tech": ["Nextflow", "Long-Read Seq", "Mass Spectrometry", "Proteomics"],
+      "outcome": "Identified novel protein isoforms absent from GENCODE reference",
+      "github": "[REPLACE] https://github.com/...",
+      "demo": "",
+      "image": "assets/proteogenomics.png"
+    },
+    {
+      "title": "Single-Cell Trajectory Analysis of Bone Marrow",
+      "description": "Pseudotime trajectory analysis on single-cell RNA-seq data characterizing gene expression dynamics along osteoblast and osteoclast differentiation in bone marrow stromal cells — mapping the molecular choreography of bone formation.",
+      "tech": ["Slingshot", "Scanpy", "scRNA-seq", "WGCNA", "Bayesian Networks"],
+      "outcome": "Mapped differentiation trajectories and prioritized causal genes via network hub overlap",
+      "github": "[REPLACE] https://github.com/...",
+      "demo": "",
+      "image": "assets/single-cell.png"
+    },
+    {
+      "title": "Low-Pass WGS Processing Pipeline",
+      "description": "High-throughput processing pipeline for Low-Pass Whole Genome Sequencing achieving 15% reduction in genotyping costs while maintaining fidelity for downstream haplotype calling and eQTL analysis.",
+      "tech": ["Python", "Bash", "SLURM", "WGS", "Imputation"],
+      "outcome": "15% reduction in genotyping costs with preserved data fidelity",
+      "github": "[REPLACE] https://github.com/...",
+      "demo": "",
+      "image": "assets/lpwgs.png"
+    },
+    {
+      "title": "FAIR Data Governance Framework",
+      "description": "Architected a standardized data governance framework enforcing FAIR principles across all research data assets — transforming chaos into a reproducible, audit-ready ecosystem.",
+      "tech": ["FAIR Principles", "Data Governance", "ETL", "Metadata Standards"],
+      "outcome": "Transformed unstructured research environment into reproducible ecosystem",
+      "github": "[REPLACE] https://github.com/...",
+      "demo": "",
+      "image": "assets/fair.png"
+    }
+  ],
+  "skills": {
+    "Statistical Genetics & Causal Inference": ["GWAS", "eQTL Mapping", "Colocalization (coloc)", "Bayesian Networks (bnlearn)", "Bootstrapping", "Mendelian Randomization"],
+    "Genomics & Multi-Omics": ["WGS/LP-WGS", "Long-Read RNA-seq", "Proteogenomics", "Variant Calling", "Genotype Imputation", "Epigenomics"],
+    "Single-Cell & Network Biology": ["scRNA-seq", "Slingshot", "WGCNA", "Cell-Type Deconvolution", "Hub Gene Identification", "Gene Regulatory Networks"],
+    "Deep Learning & AI": ["PyTorch", "ResNet", "Medical Image Segmentation", "Clinical NLP", "REST API Deployment"],
+    "Pipeline Engineering": ["Nextflow", "Snakemake", "SLURM/HPC", "FAIR Governance", "Illumina DRAGEN", "ETL Frameworks"],
+    "Programming & Tools": ["Python", "R", "Bash", "SQL", "Git", "Linux/Unix", "Jupyter", "Docker"]
+  },
+  "experience": [
+    {
+      "role": "Computational Biology Research Fellow",
+      "company": "University of Virginia — Dept. of Genome Sciences",
+      "period": "Aug 2024 — Present",
+      "bullets": [
+        "Developed colocalization pipeline integrating GWAS and eQTL data for causal gene discovery with conditional analysis and bootstrapping validation",
+        "Constructed cell-type-specific WGCNA modules and identified hub genes via Bayesian network analysis",
+        "Performed pseudotime trajectory analysis on scRNA-seq data mapping osteoblast/osteoclast differentiation",
+        "Optimized HPC parallelization pipelines, reducing runtime by 24 hours per batch"
+      ]
+    },
+    {
+      "role": "Senior Data Analyst",
+      "company": "University of Virginia — Dept. of Genome Sciences",
+      "period": "Sep 2022 — Jul 2024",
+      "bullets": [
+        "Built LP-WGS processing pipeline achieving 15% reduction in genotyping costs",
+        "Deployed Nextflow-based Proteogenomics pipeline discovering novel transcript isoforms beyond GENCODE",
+        "Architected FAIR data governance framework transforming research data into reproducible ecosystem"
+      ]
+    },
+    {
+      "role": "Bioinformatician, Assay Productization",
+      "company": "PierianDx",
+      "period": "Oct 2021 — Jun 2022",
+      "bullets": [
+        "Designed clinical genomics pipelines for variant calling at production scale with Illumina DRAGEN",
+        "Developed resource allocation engine optimizing engineering team deployment"
+      ]
+    },
+    {
+      "role": "IT Consultant",
+      "company": "Governing Health Futures 2030",
+      "period": "Oct 2020 — Sep 2021",
+      "bullets": [
+        "Delivered strategic architectural guidance on digital health ecosystems for global public health initiative",
+        "Performed code reviews and architectural assessments aligning public health objectives with engineering"
+      ]
+    },
+    {
+      "role": "Senior Project Associate",
+      "company": "CSIR-IGIB — Institute of Genomics and Integrative Biology",
+      "period": "Nov 2018 — Sep 2021",
+      "bullets": [
+        "Developed RAPID-CT deep learning framework for Intracranial Hemorrhage detection from brain CT scans",
+        "Engineered PII-blind REST API with split-key encryption for privacy-preserving clinical inference",
+        "Built automated pipelines and dashboards for TCGA/CPTAC data democratization"
+      ]
+    },
+    {
+      "role": "Bioinformatics Intern",
+      "company": "Elucidata Corporation",
+      "period": "Sep 2018 — Nov 2018",
+      "bullets": [
+        "Engineered client-facing dashboard modules for cancer genomics data integrated into production SaaS platform"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "The septin cytoskeleton is a regulator of intestinal epithelial barrier integrity and mucosal inflammation",
+      "journal": "JCI Insight",
+      "year": 2025,
+      "doi": "10.1172/jci.insight.191538"
+    },
+    {
+      "title": "IS-PRM-Based Peptide Targeting Informed by Long-Read Sequencing for Alternative Proteome Detection",
+      "journal": "Journal of the American Society for Mass Spectrometry",
+      "year": 2024,
+      "doi": "10.1021/jasms.4c00119"
+    },
+    {
+      "title": "Application of Computer Assisted Bimolecular Interaction Modelling in Predictive Microbiology",
+      "journal": "Journal of Advanced Microbiology",
+      "year": 2020,
+      "doi": "10.5530/jam.4.1.5"
+    }
+  ],
+  "awards": [
+    "Reviewer's Choice Abstract — ASHG Annual Meeting, 2025",
+    "Precision Health Initiative Trainee Stipend — University of Virginia, 2025",
+    "Best Poster Award — National Workshop on Big Data & AI in Healthcare, 2019"
+  ],
+  "blog": {
+    "enabled": true,
+    "posts_dir": "blog/posts",
+    "posts_per_page": 6
+  },
+  "design": {
+    "style": "bold-modern-gradient",
+    "primary_gradient": ["#6366f1", "#8b5cf6", "#a855f7"],
+    "accent": "#06b6d4",
+    "dark_mode_default": true
+  }
+}

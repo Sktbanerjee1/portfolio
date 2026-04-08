@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog — Saikat Bandyopadhyay. Dispatches from the frontier of healthcare AI and computational biology.">
+  <title>Blog — Saikat Bandyopadhyay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <header>
+    <nav class="main-nav nav-scrolled" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo gradient-text">SB</a>
+        <ul class="nav-links">
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="index.html#experience" class="nav-link">Journey</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="section" style="padding-top: calc(var(--space-2xl) + 4rem);">
+      <div class="container">
+        <h1 class="section-heading gradient-text">Dispatches from the Frontier</h1>
+        <p class="section-subtitle">Thoughts on healthcare AI, computational biology, and the future of medicine</p>
+
+        <div class="blog-preview-grid stagger-container" id="blog-posts">
+          <!-- Populated by blog-engine.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Saikat Bandyopadhyay. Crafted with purpose.</p>
+    </div>
+  </footer>
+
+  <script src="blog-engine.js"></script>
+</body>
+</html>
