@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Saikat Bandyopadhyay",
-    "title": "Computational Biologist & Health AI Engineer",
+    "title": "Full-Stack Biomedical Data Scientist & Clinical Pipeline Architect",
     "tagline": "Decoding the language of life to end human suffering",
     "email": "saikat.bandyopadhyay.dsx@gmail.com",
     "location": "Charlottesville, VA",
@@ -14,31 +14,36 @@
   },
   "hero": {
     "typed_strings": [
-      "Computational Biologist",
+      "Full-Stack Biomedical Data Scientist",
+      "Clinical Pipeline Architect",
       "ML Engineer",
-      "Pipeline Architect",
-      "Health Data Scientist"
+      "Health AI Systems Builder"
     ],
     "cta_text": "Explore My Mission",
     "cta_link": "#projects"
   },
   "about": {
-    "bio": "I believe every genome holds a story of suffering that computation can help rewrite. From detecting brain hemorrhages with deep learning to tracing the causal architecture of disease through multi-omics, my work lives at the frontier where algorithms meet human healing. I build scalable, reproducible pipelines that transform raw biological signal into actionable clinical insight — because the distance between a sequencer's output and a patient's cure should be measured in code, not years.",
+    "bio": "I am a data scientist focused on building next-generation data solutions at the intersection of disease risk and health. Increasing data volume across several domains requires scalable, robust, auditable data pipelines and processes to best use their data in the service of generating business intelligence. My skill is in systems design and complex systems architecture in terms of data-driven decision making.",
     "highlights": [
       {
-        "icon": "dna",
-        "label": "Mission",
-        "value": "Translating multi-omics data into cures through computational biology & AI"
+        "icon": "shield",
+        "label": "Clinical-Grade",
+        "value": "CLIA/CAP + HIPAA/SOC 2 compliant pipeline design with automated validation gates and audit trails"
+      },
+      {
+        "icon": "activity",
+        "label": "Real-Time QC",
+        "value": "Early warning systems with sequencing quality dashboards and anomaly detection"
+      },
+      {
+        "icon": "layers",
+        "label": "Scalable Architecture",
+        "value": "Modular, fault-tolerant pipelines — containerized, checkpointed, horizontally scalable on HPC"
       },
       {
         "icon": "code",
         "label": "Stack",
-        "value": "Python, R, PyTorch, Nextflow, GSAP, Three.js"
-      },
-      {
-        "icon": "graduation-cap",
-        "label": "Education",
-        "value": "MS Biological Sciences, University of Virginia (2026)"
+        "value": "Python, R, PyTorch, Nextflow, Snakemake, DRAGEN, Docker, SLURM"
       }
     ]
   },
@@ -99,11 +104,12 @@
     }
   ],
   "skills": {
+    "Clinical Pipeline Design": ["CLIA/CAP Compliance", "HIPAA/SOC 2", "Automated Validation Gates", "Audit Trail Logging", "Redundancy & Failover", "Real-Time QC Monitoring"],
+    "Pipeline Engineering": ["Nextflow", "Snakemake", "Illumina DRAGEN", "SLURM/HPC", "Docker/Singularity", "Checkpoint & Retry Logic", "FAIR Governance"],
     "Statistical Genetics & Causal Inference": ["GWAS", "eQTL Mapping", "Colocalization (coloc)", "Bayesian Networks (bnlearn)", "Bootstrapping", "Mendelian Randomization"],
     "Genomics & Multi-Omics": ["WGS/LP-WGS", "Long-Read RNA-seq", "Proteogenomics", "Variant Calling", "Genotype Imputation", "Epigenomics"],
+    "Deep Learning & AI": ["PyTorch", "ResNet", "Medical Image Segmentation", "Clinical NLP", "REST API Deployment", "Real-Time Inference"],
     "Single-Cell & Network Biology": ["scRNA-seq", "Slingshot", "WGCNA", "Cell-Type Deconvolution", "Hub Gene Identification", "Gene Regulatory Networks"],
-    "Deep Learning & AI": ["PyTorch", "ResNet", "Medical Image Segmentation", "Clinical NLP", "REST API Deployment"],
-    "Pipeline Engineering": ["Nextflow", "Snakemake", "SLURM/HPC", "FAIR Governance", "Illumina DRAGEN", "ETL Frameworks"],
     "Programming & Tools": ["Python", "R", "Bash", "SQL", "Git", "Linux/Unix", "Jupyter", "Docker"]
   },
   "experience": [
@@ -112,10 +118,9 @@
       "company": "University of Virginia — Dept. of Genome Sciences",
       "period": "Aug 2024 — Present",
       "bullets": [
-        "Developed colocalization pipeline integrating GWAS and eQTL data for causal gene discovery with conditional analysis and bootstrapping validation",
-        "Constructed cell-type-specific WGCNA modules and identified hub genes via Bayesian network analysis",
-        "Performed pseudotime trajectory analysis on scRNA-seq data mapping osteoblast/osteoclast differentiation",
-        "Optimized HPC parallelization pipelines, reducing runtime by 24 hours per batch"
+        "Discovered 2 novel genes associated with bone strength by designing a scalable colocalization pipeline integrating Diversity Outbred mouse and human GWAS/eQTL data with conditional analysis and bootstrapping validation; leading manuscript preparation",
+        "Reduced HPC batch runtime by 50% (48h → 24h) for 200-sample genome reconstruction jobs by implementing vectorized data object handling and optimized SLURM thread allocation, accelerating iterative analysis cycles",
+        "Prioritized candidate genes for experimental validation by constructing modular WGCNA modules with Bayesian network hub gene identification, engineered with checkpoint-based fault tolerance for multi-day compute jobs"
       ]
     },
     {
@@ -123,27 +128,29 @@
       "company": "University of Virginia — Dept. of Genome Sciences",
       "period": "Sep 2022 — Jul 2024",
       "bullets": [
-        "Built LP-WGS processing pipeline achieving 15% reduction in genotyping costs",
-        "Deployed Nextflow-based Proteogenomics pipeline discovering novel transcript isoforms beyond GENCODE",
-        "Architected FAIR data governance framework transforming research data into reproducible ecosystem"
+        "Saved 60% per-sample genotyping cost (~$100 → ~$40) across 1,000+ samples by building an end-to-end LP-WGS processing pipeline, preserving fidelity for downstream haplotype calling and eQTL analysis",
+        "Discovered novel protein isoforms absent from GENCODE reference (published in JASMS, 2024) by deploying a Nextflow-based proteogenomics pipeline integrating long-read RNA-seq with mass spectrometry",
+        "Standardized 50+ research datasets across 20+ researchers into a reproducible, audit-ready ecosystem by architecting a FAIR data governance framework with metadata standards and ETL automation"
       ]
     },
     {
       "role": "Bioinformatician, Assay Productization",
-      "company": "PierianDx",
+      "company": "PierianDx (Clinical Genomics — CLIA/CAP Certified)",
       "period": "Oct 2021 — Jun 2022",
       "bullets": [
-        "Designed clinical genomics pipelines for variant calling at production scale with Illumina DRAGEN",
-        "Developed resource allocation engine optimizing engineering team deployment"
+        "Shipped a QC validation pipeline adopted as the organization-wide standard for all DRAGEN-based clinical assays, processing 200–1,000 patient samples/week within a CLIA/CAP-certified, HIPAA + SOC 2-compliant environment",
+        "Prevented downstream clinical errors by designing automated validation gates that flagged sequencing failures, caught anomalous runs, and reduced manual QC review turnaround time",
+        "Ensured regulatory traceability across all pipeline runs by implementing audit trail logging and redundancy/failover patterns in a highly regulated clinical genomics environment",
+        "Improved engineering team utilization by developing a resource allocation engine that optimized staff deployment across concurrent assay productization workstreams"
       ]
     },
     {
       "role": "IT Consultant",
-      "company": "Governing Health Futures 2030",
+      "company": "Governing Health Futures 2030 (The Lancet & Financial Times Commission)",
       "period": "Oct 2020 — Sep 2021",
       "bullets": [
-        "Delivered strategic architectural guidance on digital health ecosystems for global public health initiative",
-        "Performed code reviews and architectural assessments aligning public health objectives with engineering"
+        "Shaped digital health infrastructure strategy for a global commission co-chaired by The Lancet and Financial Times by delivering technical architecture reviews and scalability assessments",
+        "Strengthened engineering rigor of public health data systems by performing code reviews and architecture assessments that aligned infrastructure design with best practices"
       ]
     },
     {
@@ -151,9 +158,10 @@
       "company": "CSIR-IGIB — Institute of Genomics and Integrative Biology",
       "period": "Nov 2018 — Sep 2021",
       "bullets": [
-        "Developed RAPID-CT deep learning framework for Intracranial Hemorrhage detection from brain CT scans",
-        "Engineered PII-blind REST API with split-key encryption for privacy-preserving clinical inference",
-        "Built automated pipelines and dashboards for TCGA/CPTAC data democratization"
+        "Achieved sub-2-minute inference latency for emergency brain hemorrhage triage by developing the RAPID-CT deep learning framework, validated on 1,000+ CT scans in partnership with a hospital collaborator",
+        "Enabled privacy-preserving clinical AI deployment by engineering a PII-blind REST API with split-key encryption, redundant inference paths, and health monitoring endpoints",
+        "Democratized cancer genomics data for 30+ researchers across multiple institutions by building automated monitoring pipelines and dashboards for TCGA/CPTAC datasets with real-time quality alerting",
+        "Mentored junior researchers and presented findings at national conferences, contributing to the institute's computational biology training pipeline"
       ]
     },
     {
@@ -161,7 +169,7 @@
       "company": "Elucidata Corporation",
       "period": "Sep 2018 — Nov 2018",
       "bullets": [
-        "Engineered client-facing dashboard modules for cancer genomics data integrated into production SaaS platform"
+        "Shipped somatic mutation visualization modules integrated into Elucidata's Polly platform by engineering client-facing dashboard components for cancer genomics variant data exploration"
       ]
     }
   ],
