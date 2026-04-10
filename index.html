@@ -295,8 +295,20 @@
     <section id="skills" class="section">
       <div class="container">
         <h2 class="section-heading gradient-text">Skills</h2>
-        <p class="section-subtitle"></p>
+        <p class="section-subtitle">A network of interconnected capabilities &mdash; hover to trace connections, click any skill to surface related projects.</p>
 
+        <!-- Hub-and-spoke skill network visualization -->
+        <div class="skill-network-wrapper reveal-up" id="skill-network">
+          <svg class="skill-network-svg" id="skill-network-svg" aria-label="Interactive skill network"></svg>
+          <div class="skill-network-tooltip" id="skill-network-tooltip">
+            <span class="tooltip-label" id="skill-tooltip-label"></span>
+            <span class="tooltip-sub" id="skill-tooltip-sub"></span>
+          </div>
+        </div>
+        <div class="skill-network-legend" id="skill-network-legend"></div>
+
+        <details class="skills-fallback">
+          <summary>View as a compact list</summary>
         <div class="skills-grid stagger-container">
 
           <div class="glass-card skill-group">
@@ -387,6 +399,7 @@
           </div>
 
         </div>
+        </details>
       </div>
     </section>
 

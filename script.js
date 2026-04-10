@@ -361,6 +361,7 @@
     initNavigation();
     initScrollAnimations();
     initProjectTimeline();
+    initSkillNetwork();
     initBlogPreview();
     initContactForm();
   }
@@ -644,6 +645,579 @@
       ctx.fillStyle = 'rgba(15, 15, 35, 0.9)';
       ctx.fill();
     }
+  }
+
+  // ---- Interactive Skill Network (hub-and-spoke) ----
+  function initSkillNetwork() {
+    var svg = document.getElementById('skill-network-svg');
+    var wrapper = document.getElementById('skill-network');
+    var tooltip = document.getElementById('skill-network-tooltip');
+    var tipLabel = document.getElementById('skill-tooltip-label');
+    var tipSub = document.getElementById('skill-tooltip-sub');
+    var legendEl = document.getElementById('skill-network-legend');
+    if (!svg || !wrapper) return;
+
+    // Skill groups (must match data.json). Each group has a base color.
+    // Hubs use a DARKER variant of the same color; spokes use a LIGHTER variant.
+    var groups = [
+      { id: 'clinical',   name: 'Clinical Pipeline Design', base: '#f472b6',
+        skills: ['CLIA/CAP', 'HIPAA/SOC 2', 'Validation Gates', 'Audit Trails', 'Redundancy', 'QC Monitoring'] },
+      { id: 'pipeline',   name: 'Pipeline Engineering', base: '#34d399',
+        skills: ['Nextflow', 'Snakemake', 'DRAGEN', 'SLURM/HPC', 'Docker', 'Retry Logic', 'FAIR'] },
+      { id: 'statgen',    name: 'Statistical Genetics', base: '#38bdf8',
+        skills: ['GWAS', 'eQTL', 'Colocalization', 'Bayesian Nets', 'Bootstrapping', 'Mendelian Rand.'] },
+      { id: 'genomics',   name: 'Genomics & Multi-Omics', base: '#818cf8',
+        skills: ['WGS', 'Long-Read RNA', 'Proteogenomics', 'Variant Calling', 'Imputation', 'Epigenomics'] },
+      { id: 'ai',         name: 'Deep Learning & AI', base: '#fb923c',
+        skills: ['PyTorch', 'ResNet', 'Segmentation', 'Clinical NLP', 'REST API', 'Inference'] },
+      { id: 'singlecell', name: 'Single-Cell & Networks', base: '#c084fc',
+        skills: ['scRNA-seq', 'Slingshot', 'WGCNA', 'Deconvolution', 'Hub Genes', 'GRN'] },
+      { id: 'programming',name: 'Programming & Tools', base: '#fbbf24',
+        skills: ['Python', 'R', 'Bash', 'SQL', 'Git', 'Linux', 'Jupyter', 'Docker'] }
+    ];
+
+    // Map a skill (normalized) -> regex or token list that should match project tech-badges
+    // Used for click-to-filter-projects functionality
+    var skillToProjectTokens = {
+      'CLIA/CAP': ['Encryption', 'REST API'],
+      'HIPAA/SOC 2': ['Encryption', 'REST API'],
+      'Validation Gates': ['Nextflow'],
+      'Audit Trails': ['Data Governance', 'Metadata Standards'],
+      'Redundancy': ['SLURM', 'HPC'],
+      'QC Monitoring': ['Data Governance'],
+      'Nextflow': ['Nextflow'],
+      'Snakemake': ['Nextflow'],
+      'DRAGEN': ['WGS'],
+      'SLURM/HPC': ['SLURM', 'HPC'],
+      'Docker': ['Encryption'],
+      'Retry Logic': ['Nextflow'],
+      'FAIR': ['FAIR', 'Data Governance', 'Metadata'],
+      'GWAS': ['GWAS', 'coloc'],
+      'eQTL': ['eQTL', 'coloc'],
+      'Colocalization': ['coloc', 'GWAS', 'eQTL'],
+      'Bayesian Nets': ['bnlearn', 'Bayesian'],
+      'Bootstrapping': ['coloc'],
+      'Mendelian Rand.': ['coloc', 'GWAS'],
+      'WGS': ['WGS', 'Imputation'],
+      'Long-Read RNA': ['Long-Read', 'Nextflow'],
+      'Proteogenomics': ['Proteomics', 'Mass Spectrometry', 'Long-Read'],
+      'Variant Calling': ['WGS', 'Imputation'],
+      'Imputation': ['Imputation', 'WGS'],
+      'Epigenomics': ['Long-Read'],
+      'PyTorch': ['PyTorch', 'ResNet'],
+      'ResNet': ['ResNet', 'PyTorch'],
+      'Segmentation': ['Medical Imaging', 'ResNet'],
+      'Clinical NLP': ['Medical Imaging'],
+      'REST API': ['REST API'],
+      'Inference': ['PyTorch', 'ResNet', 'REST API'],
+      'scRNA-seq': ['scRNA-seq', 'Slingshot', 'WGCNA'],
+      'Slingshot': ['Slingshot', 'scRNA-seq'],
+      'WGCNA': ['WGCNA'],
+      'Deconvolution': ['scRNA-seq'],
+      'Hub Genes': ['WGCNA', 'Bayesian'],
+      'GRN': ['bnlearn', 'WGCNA'],
+      'Python': ['Python', 'PyTorch', 'Nextflow'],
+      'R': ['R', 'coloc', 'bnlearn'],
+      'Bash': ['Bash'],
+      'SQL': [],
+      'Git': [],
+      'Linux': ['SLURM', 'HPC', 'Bash'],
+      'Jupyter': ['Python'],
+    };
+
+    // --- Color helpers ---
+    function hexToRgb(hex) {
+      var h = hex.replace('#','');
+      if (h.length === 3) h = h.split('').map(function(c){return c+c;}).join('');
+      var num = parseInt(h, 16);
+      return { r: (num>>16)&255, g: (num>>8)&255, b: num&255 };
+    }
+    function rgbToStr(r,g,b,a) { return 'rgba('+r+','+g+','+b+','+(a==null?1:a)+')'; }
+    function darken(hex, amt) {
+      var c = hexToRgb(hex);
+      return rgbToStr(Math.round(c.r*(1-amt)), Math.round(c.g*(1-amt)), Math.round(c.b*(1-amt)));
+    }
+    function lighten(hex, amt) {
+      var c = hexToRgb(hex);
+      return rgbToStr(Math.round(c.r+(255-c.r)*amt), Math.round(c.g+(255-c.g)*amt), Math.round(c.b+(255-c.b)*amt));
+    }
+
+    // --- Layout ---
+    function render() {
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+      var rect = wrapper.getBoundingClientRect();
+      var W = rect.width;
+      var H = rect.height;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+      var cx = W / 2;
+      var cy = H / 2; // legend now lives outside the wrapper, use full vertical space
+      var isMobile = W < 700;
+      // Base hub ring radius (jittered per-hub below for an organic layout)
+      var hubRingR = Math.min(W, H) * (isMobile ? 0.32 : 0.30);
+      // Spoke distance (hub center → skill orb center)
+      var spokeDist = isMobile ? 60 : 86;
+      // Hub and skill orbs are the SAME size — hubs differentiated by darker color + halo
+      var skillOrbR = isMobile ? 9 : 13;
+      var hubOrbR = skillOrbR;
+
+      // Defs: per-group radial gradients for the orbs
+      var svgNS = 'http://www.w3.org/2000/svg';
+      var defs = document.createElementNS(svgNS, 'defs');
+      groups.forEach(function(g) {
+        // Hub gradient: dark, saturated — 3D sphere look
+        var hg = document.createElementNS(svgNS, 'radialGradient');
+        hg.setAttribute('id', 'grad-hub-' + g.id);
+        hg.setAttribute('cx', '35%');
+        hg.setAttribute('cy', '35%');
+        hg.setAttribute('r', '75%');
+        var hs1 = document.createElementNS(svgNS, 'stop');
+        hs1.setAttribute('offset', '0%');
+        hs1.setAttribute('stop-color', lighten(g.base, 0.15));
+        var hs2 = document.createElementNS(svgNS, 'stop');
+        hs2.setAttribute('offset', '60%');
+        hs2.setAttribute('stop-color', g.base);
+        var hs3 = document.createElementNS(svgNS, 'stop');
+        hs3.setAttribute('offset', '100%');
+        hs3.setAttribute('stop-color', darken(g.base, 0.55));
+        hg.appendChild(hs1); hg.appendChild(hs2); hg.appendChild(hs3);
+        defs.appendChild(hg);
+
+        // Skill gradient: lighter, pastel — satellites around their hub
+        var sg = document.createElementNS(svgNS, 'radialGradient');
+        sg.setAttribute('id', 'grad-skill-' + g.id);
+        sg.setAttribute('cx', '35%');
+        sg.setAttribute('cy', '35%');
+        sg.setAttribute('r', '70%');
+        var ss1 = document.createElementNS(svgNS, 'stop');
+        ss1.setAttribute('offset', '0%');
+        ss1.setAttribute('stop-color', lighten(g.base, 0.5));
+        var ss2 = document.createElementNS(svgNS, 'stop');
+        ss2.setAttribute('offset', '100%');
+        ss2.setAttribute('stop-color', lighten(g.base, 0.1));
+        sg.appendChild(ss1); sg.appendChild(ss2);
+        defs.appendChild(sg);
+      });
+      svg.appendChild(defs);
+
+      // Layers (order matters for z-index)
+      var interHubLayer = document.createElementNS(svgNS, 'g');
+      interHubLayer.setAttribute('class', 'interhub-layer');
+      var edgeLayer = document.createElementNS(svgNS, 'g');
+      edgeLayer.setAttribute('class', 'edge-layer');
+      var nodeLayer = document.createElementNS(svgNS, 'g');
+      nodeLayer.setAttribute('class', 'node-layer');
+      svg.appendChild(interHubLayer);
+      svg.appendChild(edgeLayer);
+      svg.appendChild(nodeLayer);
+
+      // Organic (non-circular) hub layout. Each hub starts from its equal-spacing
+      // angle on an imaginary ring, then gets jittered angularly and radially so
+      // the whole network looks like an asymmetric biological cluster rather than
+      // a clumsy perfect circle. Jitter values are deterministic per-index so the
+      // layout stays stable across renders (no random reshuffling on resize).
+      // Order matches the `groups` array: clinical, pipeline, statgen, genomics,
+      // ai, singlecell, programming.
+      var hubJitter = [
+        { dAngle:  0.00, rScale: 1.00 },  // clinical   — top
+        { dAngle: -0.06, rScale: 0.92 },  // pipeline   — slightly in from upper-right
+        { dAngle:  0.05, rScale: 1.06 },  // statgen    — slightly out to the right
+        { dAngle: -0.05, rScale: 0.94 },  // genomics   — slightly in from lower-right
+        { dAngle:  0.05, rScale: 1.06 },  // ai         — slightly out to lower-left
+        { dAngle: -0.06, rScale: 0.93 },  // singlecell — slightly in from left
+        { dAngle:  0.04, rScale: 1.04 }   // programming— slightly out to upper-left
+      ];
+
+      // Pre-compute hub positions using the organic jitter layout
+      var hubPositions = groups.map(function(g, gi) {
+        var baseA = (gi / groups.length) * 2 * Math.PI - Math.PI / 2;
+        var jitter = hubJitter[gi] || { dAngle: 0, rScale: 1 };
+        var a = baseA + jitter.dAngle;
+        var r = hubRingR * jitter.rScale;
+        return {
+          id: g.id,
+          group: g,
+          angle: a,
+          x: cx + r * Math.cos(a),
+          y: cy + r * Math.sin(a)
+        };
+      });
+
+      // ----- Inter-hub edges: connect each hub to its two ring neighbors -----
+      var interHubEdges = [];
+      for (var i = 0; i < hubPositions.length; i++) {
+        var a = hubPositions[i];
+        var b = hubPositions[(i + 1) % hubPositions.length];
+        var line = document.createElementNS(svgNS, 'line');
+        line.setAttribute('class', 'interhub-edge');
+        // Start at edge of orb, not center
+        var dx = b.x - a.x, dy = b.y - a.y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var ux = dx / dist, uy = dy / dist;
+        line.setAttribute('x1', a.x + ux * hubOrbR);
+        line.setAttribute('y1', a.y + uy * hubOrbR);
+        line.setAttribute('x2', b.x - ux * hubOrbR);
+        line.setAttribute('y2', b.y - uy * hubOrbR);
+        line.setAttribute('data-groups', a.id + ',' + b.id);
+        interHubLayer.appendChild(line);
+        interHubEdges.push({ el: line, groupIds: [a.id, b.id] });
+      }
+
+      var allNodes = [];
+      var allEdges = [];
+
+      // ----- Spoke edges + skill orbs + hubs -----
+      groups.forEach(function(g, gi) {
+        var hp = hubPositions[gi];
+        var hx = hp.x, hy = hp.y, hubAngle = hp.angle;
+
+        // Skill orbs fan outward from hub along an arc facing away from center
+        var nSkills = g.skills.length;
+        var spreadAngle = Math.PI * 0.72; // ~130° arc — narrower to prevent module overlap
+        var startA = hubAngle - spreadAngle / 2;
+
+        g.skills.forEach(function(skill, si) {
+          var a = nSkills === 1
+            ? hubAngle
+            : startA + (si / (nSkills - 1)) * spreadAngle;
+          var sx = hx + spokeDist * Math.cos(a);
+          var sy = hy + spokeDist * Math.sin(a);
+
+          // Spoke edge (hub → skill), starting and ending at the orb edges
+          var edge = document.createElementNS(svgNS, 'line');
+          edge.setAttribute('class', 'edge');
+          edge.setAttribute('x1', hx + hubOrbR * Math.cos(a));
+          edge.setAttribute('y1', hy + hubOrbR * Math.sin(a));
+          edge.setAttribute('x2', sx - skillOrbR * Math.cos(a));
+          edge.setAttribute('y2', sy - skillOrbR * Math.sin(a));
+          edge.setAttribute('stroke', lighten(g.base, 0.2));
+          edge.setAttribute('data-group', g.id);
+          edge.setAttribute('data-skill', skill);
+          edgeLayer.appendChild(edge);
+          allEdges.push({ el: edge, groupId: g.id, skill: skill });
+
+          // Skill node
+          var skillNode = document.createElementNS(svgNS, 'g');
+          skillNode.setAttribute('class', 'node skill-node');
+          skillNode.setAttribute('data-group', g.id);
+          skillNode.setAttribute('data-skill', skill);
+          skillNode.setAttribute('transform', 'translate(' + sx + ',' + sy + ')');
+
+          var orb = document.createElementNS(svgNS, 'circle');
+          orb.setAttribute('class', 'orb skill-orb');
+          orb.setAttribute('cx', 0);
+          orb.setAttribute('cy', 0);
+          orb.setAttribute('r', skillOrbR);
+          orb.setAttribute('fill', 'url(#grad-skill-' + g.id + ')');
+          orb.setAttribute('stroke', lighten(g.base, 0.3));
+          orb.setAttribute('stroke-width', 1.2);
+          orb.style.color = g.base;
+          skillNode.appendChild(orb);
+
+          // Label: extend outward past the orb along the same radial direction
+          var labelOffset = skillOrbR + 7;
+          var labelDx = labelOffset * Math.cos(a);
+          var labelDy = labelOffset * Math.sin(a) + 3.5;
+          var textEl = document.createElementNS(svgNS, 'text');
+          textEl.setAttribute('x', labelDx);
+          textEl.setAttribute('y', labelDy);
+          var anchor = 'middle';
+          if (Math.cos(a) > 0.15) anchor = 'start';
+          else if (Math.cos(a) < -0.15) anchor = 'end';
+          textEl.setAttribute('text-anchor', anchor);
+          textEl.textContent = skill;
+          skillNode.appendChild(textEl);
+
+          nodeLayer.appendChild(skillNode);
+          allNodes.push({ el: skillNode, type: 'skill', groupId: g.id, label: skill, x: sx, y: sy });
+        });
+
+        // ----- Hub node (drawn last so it sits on top of edges) -----
+        var hubNode = document.createElementNS(svgNS, 'g');
+        hubNode.setAttribute('class', 'node hub-node');
+        hubNode.setAttribute('data-group', g.id);
+        hubNode.setAttribute('transform', 'translate(' + hx + ',' + hy + ')');
+
+        // Outer halo ring — marks the hub since its orb is now the same size as skills
+        var halo = document.createElementNS(svgNS, 'circle');
+        halo.setAttribute('class', 'hub-halo');
+        halo.setAttribute('cx', 0);
+        halo.setAttribute('cy', 0);
+        halo.setAttribute('r', hubOrbR + 6);
+        halo.setAttribute('fill', 'none');
+        halo.setAttribute('stroke', g.base);
+        halo.setAttribute('stroke-width', 1.2);
+        halo.setAttribute('stroke-opacity', '0.45');
+        halo.setAttribute('stroke-dasharray', '2 3');
+        hubNode.appendChild(halo);
+
+        var hOrb = document.createElementNS(svgNS, 'circle');
+        hOrb.setAttribute('class', 'orb hub-orb');
+        hOrb.setAttribute('cx', 0);
+        hOrb.setAttribute('cy', 0);
+        hOrb.setAttribute('r', hubOrbR);
+        hOrb.setAttribute('fill', 'url(#grad-hub-' + g.id + ')');
+        hOrb.setAttribute('stroke', lighten(g.base, 0.1));
+        hOrb.setAttribute('stroke-width', 2);
+        hOrb.style.color = g.base;
+        hubNode.appendChild(hOrb);
+
+        // Hub label: position INWARD (toward viz center) so labels occupy
+        // the empty middle region and don't clash with outward-fanning spokes
+        var inwardAngle = hubAngle + Math.PI;
+        var labelDist = hubOrbR + 22; // clear the halo ring (hubOrbR + 6)
+        var hlx = labelDist * Math.cos(inwardAngle);
+        var hly = labelDist * Math.sin(inwardAngle);
+        var hAnchor = 'middle';
+        if (Math.cos(inwardAngle) > 0.2) hAnchor = 'start';
+        else if (Math.cos(inwardAngle) < -0.2) hAnchor = 'end';
+
+        // Split multi-word names into 2 lines for compactness
+        var nameParts = g.name.split(' ');
+        var line1, line2;
+        if (nameParts.length <= 1) {
+          line1 = g.name; line2 = '';
+        } else {
+          var mid = Math.ceil(nameParts.length / 2);
+          line1 = nameParts.slice(0, mid).join(' ');
+          line2 = nameParts.slice(mid).join(' ');
+        }
+
+        // Vertical balancing: if inward points up/down, offset line1 so pair is centered
+        var lineHeight = 14;
+        var verticalBalance = line2 ? -lineHeight / 2 + 4 : 4;
+        var t1 = document.createElementNS(svgNS, 'text');
+        t1.setAttribute('x', hlx);
+        t1.setAttribute('y', hly + verticalBalance);
+        t1.setAttribute('text-anchor', hAnchor);
+        t1.textContent = line1;
+        hubNode.appendChild(t1);
+        if (line2) {
+          var t2 = document.createElementNS(svgNS, 'text');
+          t2.setAttribute('x', hlx);
+          t2.setAttribute('y', hly + verticalBalance + lineHeight);
+          t2.setAttribute('text-anchor', hAnchor);
+          t2.textContent = line2;
+          hubNode.appendChild(t2);
+        }
+
+        nodeLayer.appendChild(hubNode);
+        allNodes.push({ el: hubNode, type: 'hub', groupId: g.id, label: g.name, x: hx, y: hy });
+      });
+
+      // Expose interhub edges so bindInteractions can dim them too
+      allEdges.interhub = interHubEdges;
+
+      bindInteractions(allNodes, allEdges);
+      renderLegend();
+    }
+
+    // --- Interactions ---
+    function bindInteractions(allNodes, allEdges) {
+      var interHubEdges = allEdges.interhub || [];
+
+      function clearHighlight() {
+        allNodes.forEach(function(n) { n.el.classList.remove('dimmed','highlighted'); });
+        allEdges.forEach(function(e) { e.el.classList.remove('dimmed','highlighted'); });
+        interHubEdges.forEach(function(e) { e.el.classList.remove('dimmed','highlighted'); });
+      }
+
+      function highlightGroup(groupId, activeSkill) {
+        allNodes.forEach(function(n) {
+          if (n.groupId === groupId) {
+            n.el.classList.add('highlighted');
+            n.el.classList.remove('dimmed');
+          } else {
+            n.el.classList.add('dimmed');
+            n.el.classList.remove('highlighted');
+          }
+        });
+        allEdges.forEach(function(e) {
+          if (e.groupId === groupId) {
+            e.el.classList.add('highlighted');
+            e.el.classList.remove('dimmed');
+          } else {
+            e.el.classList.add('dimmed');
+            e.el.classList.remove('highlighted');
+          }
+        });
+        // Inter-hub edges: keep any that touch this group, dim the rest
+        interHubEdges.forEach(function(e) {
+          if (e.groupIds.indexOf(groupId) !== -1) {
+            e.el.classList.remove('dimmed');
+          } else {
+            e.el.classList.add('dimmed');
+          }
+        });
+      }
+
+      function showTooltip(label, sub, x, y) {
+        tipLabel.textContent = label;
+        tipSub.textContent = sub || '';
+        tooltip.style.left = x + 'px';
+        tooltip.style.top = y + 'px';
+        tooltip.classList.add('visible');
+      }
+      function hideTooltip() {
+        tooltip.classList.remove('visible');
+      }
+
+      allNodes.forEach(function(n) {
+        n.el.addEventListener('mouseenter', function() {
+          highlightGroup(n.groupId);
+          var subText = n.type === 'hub'
+            ? (groups.find(function(g){return g.id===n.groupId;}).skills.length + ' skills')
+            : 'Click to see related projects';
+          showTooltip(n.label, subText, n.x, n.y);
+        });
+        n.el.addEventListener('mouseleave', function() {
+          clearHighlight();
+          hideTooltip();
+        });
+
+        n.el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (n.type === 'skill') {
+            filterProjectsBySkill(n.label);
+          } else {
+            // Hub click: filter by ANY skill in that group
+            filterProjectsByGroup(n.groupId);
+          }
+        });
+      });
+
+      // Clicking outside clears project highlight
+      document.addEventListener('click', function(e) {
+        if (!wrapper.contains(e.target)) clearProjectHighlight();
+      });
+    }
+
+    // --- Project filtering ---
+    function tokensForSkill(skill) {
+      return skillToProjectTokens[skill] || [];
+    }
+
+    function filterProjectsBySkill(skill) {
+      var tokens = tokensForSkill(skill);
+      applyProjectHighlight(tokens);
+    }
+
+    function filterProjectsByGroup(groupId) {
+      var g = groups.find(function(x){return x.id===groupId;});
+      if (!g) return;
+      var tokens = [];
+      g.skills.forEach(function(s) {
+        tokensForSkill(s).forEach(function(t){ if (tokens.indexOf(t)===-1) tokens.push(t); });
+      });
+      applyProjectHighlight(tokens);
+    }
+
+    function applyProjectHighlight(tokens) {
+      var cards = document.querySelectorAll('.project-card');
+      if (!cards.length) return;
+
+      if (!tokens.length) {
+        clearProjectHighlight();
+        return;
+      }
+
+      var matchedCount = 0;
+      cards.forEach(function(card) {
+        var badges = card.querySelectorAll('.tech-badge');
+        var badgeText = Array.prototype.map.call(badges, function(b){ return b.textContent; }).join(' ');
+        var matched = tokens.some(function(t) {
+          return badgeText.toLowerCase().indexOf(t.toLowerCase()) !== -1;
+        });
+        card.classList.remove('skill-highlight','skill-dim');
+        if (matched) {
+          card.classList.add('skill-highlight');
+          matchedCount++;
+        } else {
+          card.classList.add('skill-dim');
+        }
+      });
+
+      if (matchedCount > 0) {
+        // Smooth scroll to projects section
+        var projects = document.getElementById('projects');
+        if (projects) {
+          projects.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        clearProjectHighlight();
+      }
+    }
+
+    function clearProjectHighlight() {
+      document.querySelectorAll('.project-card').forEach(function(card){
+        card.classList.remove('skill-highlight','skill-dim');
+      });
+    }
+
+    // --- Legend ---
+    function renderLegend() {
+      if (!legendEl) return;
+      legendEl.innerHTML = '';
+      groups.forEach(function(g) {
+        var item = document.createElement('div');
+        item.className = 'legend-item';
+        item.dataset.group = g.id;
+        var sw = document.createElement('span');
+        sw.className = 'legend-swatch';
+        sw.style.background = g.base;
+        sw.style.color = g.base;
+        var lbl = document.createElement('span');
+        lbl.textContent = g.name;
+        item.appendChild(sw);
+        item.appendChild(lbl);
+        legendEl.appendChild(item);
+
+        // Legend hover -> highlight that group
+        item.addEventListener('mouseenter', function() {
+          var nodes = svg.querySelectorAll('.node');
+          var edges = svg.querySelectorAll('.edge');
+          var interEdges = svg.querySelectorAll('.interhub-edge');
+          nodes.forEach(function(n) {
+            if (n.getAttribute('data-group') === g.id) {
+              n.classList.add('highlighted'); n.classList.remove('dimmed');
+            } else {
+              n.classList.add('dimmed'); n.classList.remove('highlighted');
+            }
+          });
+          edges.forEach(function(e) {
+            if (e.getAttribute('data-group') === g.id) {
+              e.classList.add('highlighted'); e.classList.remove('dimmed');
+            } else {
+              e.classList.add('dimmed'); e.classList.remove('highlighted');
+            }
+          });
+          interEdges.forEach(function(e) {
+            var groupIds = (e.getAttribute('data-groups') || '').split(',');
+            if (groupIds.indexOf(g.id) !== -1) {
+              e.classList.remove('dimmed');
+            } else {
+              e.classList.add('dimmed');
+            }
+          });
+        });
+        item.addEventListener('mouseleave', function() {
+          svg.querySelectorAll('.node,.edge,.interhub-edge').forEach(function(el){
+            el.classList.remove('dimmed','highlighted');
+          });
+        });
+      });
+    }
+
+    render();
+
+    // Re-render on resize (debounced)
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(render, 200);
+    });
   }
 
   // Wait for DOM + libs
