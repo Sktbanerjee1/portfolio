@@ -23,27 +23,27 @@
     "cta_link": "#projects"
   },
   "about": {
-    "bio": "I am a data scientist focused on building next-generation data solutions at the intersection of disease risk and health. Increasing data volume across several domains requires scalable, robust, auditable data pipelines and processes to best use their data in the service of generating business intelligence. My skill is in systems design and complex systems architecture in terms of data-driven decision making.",
+    "bio": "I am an engineer focused on building next-generation data solutions. Increasing data volume across domains requires scalable, robust, auditable processes and data pipelines to generate actionable business intelligence. I bring systems design, data-driven storytelling, and production-grade software development to engineering teams tackling hard problems that benefit humanity.",
     "highlights": [
       {
-        "icon": "shield",
-        "label": "Clinical-Grade",
-        "value": "CLIA/CAP + HIPAA/SOC 2 compliant pipeline design with automated validation gates and audit trails"
+        "icon": "settings",
+        "label": "Production-Grade",
+        "value": "Scalable software design with CI/CD discipline, containerized deployments, and data security built in from day one"
       },
       {
-        "icon": "activity",
-        "label": "Real-Time QC",
-        "value": "Early warning systems with sequencing quality dashboards and anomaly detection"
+        "icon": "shield-check",
+        "label": "Audit-Ready",
+        "value": "Traceable, fault-tolerant systems for highly regulated environments — CLIA/CAP, HIPAA/SOC 2, healthcare, and industrial compliance"
       },
       {
-        "icon": "layers",
-        "label": "Scalable Architecture",
-        "value": "Modular, fault-tolerant pipelines — containerized, checkpointed, horizontally scalable on HPC"
+        "icon": "lock",
+        "label": "Data Security",
+        "value": "PII-blind architectures, split-key encryption, and privacy-preserving inference pipelines for sensitive clinical and genomic data"
       },
       {
-        "icon": "code",
-        "label": "Stack",
-        "value": "Python, R, PyTorch, Nextflow, Snakemake, DRAGEN, Docker, SLURM"
+        "icon": "brain",
+        "label": "Deep Learning",
+        "value": "Statistical modeling, mathematical simulation, and neural networks — from Bayesian causal inference to real-time medical image classification"
       }
     ]
   },
@@ -52,7 +52,7 @@
       "title": "RAPID-CT: AI-Powered Brain Hemorrhage Detection",
       "description": "Deep learning framework detecting Intracranial Hemorrhage from brain CT scans using segmentation-based ResNet architecture. Engineered a PII-blind REST API with split-key encryption for clinical deployment — because no patient should wait for a diagnosis while their data waits for permission.",
       "tech": ["PyTorch", "ResNet", "Medical Imaging", "REST API", "Encryption"],
-      "outcome": "High-precision ICH classification with privacy-preserving clinical deployment",
+      "outcome": "Reduced per-case processing time by 75% by deploying clinical-grade AI inference pipeline",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/rapid-ct.png"
@@ -61,7 +61,7 @@
       "title": "Causal Gene Discovery Pipeline",
       "description": "Computational colocalization pipeline integrating GWAS and bulk RNA-seq eQTL data to identify candidate causal genes in Diversity Outbred mice. Implemented conditional analysis with bootstrapping to validate concordance between conditional and colocalization signals.",
       "tech": ["R", "coloc", "bnlearn", "GWAS", "eQTL", "HPC/SLURM"],
-      "outcome": "Identified novel causal gene candidates at significantly associated loci",
+      "outcome": "Identified candidate causal genes associated with variation of bone strength that can potentially serve as therapeutic targets or biomarkers",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/colocalization.png"
@@ -70,7 +70,7 @@
       "title": "Proteogenomics: Beyond the Reference Genome",
       "description": "Nextflow-based pipeline integrating long-read RNA sequencing with mass spectrometry to discover novel transcript isoforms and protein products absent from GENCODE annotations. Rewriting what we thought we knew about the proteome.",
       "tech": ["Nextflow", "Long-Read Seq", "Mass Spectrometry", "Proteomics"],
-      "outcome": "Identified novel protein isoforms absent from GENCODE reference",
+      "outcome": "Democratised the process of alternative proteome detection through integration of long-read transcriptomics and targeted proteomics",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/proteogenomics.png"
@@ -79,7 +79,7 @@
       "title": "Single-Cell Trajectory Analysis of Bone Marrow",
       "description": "Pseudotime trajectory analysis on single-cell RNA-seq data characterizing gene expression dynamics along osteoblast and osteoclast differentiation in bone marrow stromal cells — mapping the molecular choreography of bone formation.",
       "tech": ["Slingshot", "Scanpy", "scRNA-seq", "WGCNA", "Bayesian Networks"],
-      "outcome": "Mapped differentiation trajectories and prioritized causal genes via network hub overlap",
+      "outcome": "Quantified importance of gene expression in differentiation trajectory",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/single-cell.png"
@@ -88,7 +88,7 @@
       "title": "Low-Pass WGS Processing Pipeline",
       "description": "High-throughput processing pipeline for Low-Pass Whole Genome Sequencing achieving 15% reduction in genotyping costs while maintaining fidelity for downstream haplotype calling and eQTL analysis.",
       "tech": ["Python", "Bash", "SLURM", "WGS", "Imputation"],
-      "outcome": "15% reduction in genotyping costs with preserved data fidelity",
+      "outcome": "Reduced per-sample genotyping cost by 60% (~$100 → ~$40) across 1,000+ samples while preserving fidelity for downstream haplotype calling and eQTL analysis",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/lpwgs.png"
@@ -97,7 +97,7 @@
       "title": "FAIR Data Governance Framework",
       "description": "Architected a standardized data governance framework enforcing FAIR principles across all research data assets — transforming chaos into a reproducible, audit-ready ecosystem.",
       "tech": ["FAIR Principles", "Data Governance", "ETL", "Metadata Standards"],
-      "outcome": "Transformed unstructured research environment into reproducible ecosystem",
+      "outcome": "Transformed an unstructured multi-researcher environment into a reproducible, FAIR-compliant data ecosystem serving 20+ researchers across the department",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/fair.png"
@@ -158,7 +158,7 @@
       "company": "CSIR-IGIB — Institute of Genomics and Integrative Biology",
       "period": "Nov 2018 — Sep 2021",
       "bullets": [
-        "Achieved sub-2-minute inference latency for emergency brain hemorrhage triage by developing the RAPID-CT deep learning framework, validated on 1,000+ CT scans in partnership with a hospital collaborator",
+        "Achieved 98% accuracy against radiologist-labeled ground truth and reduced per-case evaluation time from 20 minutes to 5 minutes by developing the RAPID-CT deep learning framework, validated on 1,000+ CT scans with sub-2-minute inference latency in partnership with a hospital collaborator",
         "Enabled privacy-preserving clinical AI deployment by engineering a PII-blind REST API with split-key encryption, redundant inference paths, and health monitoring endpoints",
         "Democratized cancer genomics data for 30+ researchers across multiple institutions by building automated monitoring pipelines and dashboards for TCGA/CPTAC datasets with real-time quality alerting",
         "Mentored junior researchers and presented findings at national conferences, contributing to the institute's computational biology training pipeline"

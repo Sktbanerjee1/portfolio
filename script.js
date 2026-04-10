@@ -360,8 +360,290 @@
     initTypedHero();
     initNavigation();
     initScrollAnimations();
+    initProjectTimeline();
     initBlogPreview();
     initContactForm();
+  }
+
+  // ---- Interactive Project Timeline with Donut Charts ----
+  function initProjectTimeline() {
+    const track = document.getElementById('timeline-track');
+    const yearsContainer = document.getElementById('timeline-years');
+    const tooltip = document.getElementById('timeline-tooltip');
+    const tooltipTitle = document.getElementById('tooltip-title');
+    const tooltipPeriod = document.getElementById('tooltip-period');
+    const tooltipCanvas = document.getElementById('tooltip-donut');
+    const tooltipLegend = document.getElementById('tooltip-legend');
+
+    if (!track || !yearsContainer) return;
+
+    // Project data with timeline and role breakdown
+    // Consistent color palette for role categories
+    var catColors = {
+      'Scientific Research': '#818cf8',
+      'Development':         '#34d399',
+      'Architecture Design': '#f472b6',
+      'Data Analysis':       '#38bdf8',
+      'Writing':             '#fb923c',
+      'Mentoring':           '#fbbf24',
+      'Stakeholder Mgmt':    '#c084fc'
+    };
+
+    var projects = [
+      {
+        name: 'RAPID-CT',
+        fullName: 'RAPID-CT: AI Brain Hemorrhage Detection',
+        start: 2018.83,
+        end: 2021.67,
+        color: '#f472b6',
+        row: 0,
+        breakdown: [
+          { label: 'Scientific Research', pct: 40, color: catColors['Scientific Research'] },
+          { label: 'Development', pct: 30, color: catColors['Development'] },
+          { label: 'Architecture Design', pct: 20, color: catColors['Architecture Design'] },
+          { label: 'Mentoring', pct: 10, color: catColors['Mentoring'] }
+        ]
+      },
+      {
+        name: 'LP-WGS Pipeline',
+        fullName: 'LP-WGS Processing Pipeline',
+        start: 2023.08,
+        end: 2024.0,
+        color: '#34d399',
+        row: 0,
+        breakdown: [
+          { label: 'Architecture Design', pct: 35, color: catColors['Architecture Design'] },
+          { label: 'Development', pct: 35, color: catColors['Development'] },
+          { label: 'Data Analysis', pct: 20, color: catColors['Data Analysis'] },
+          { label: 'Scientific Research', pct: 10, color: catColors['Scientific Research'] }
+        ]
+      },
+      {
+        name: 'Proteogenomics',
+        fullName: 'Proteogenomics Pipeline (JASMS 2024)',
+        start: 2022.0,
+        end: 2023.0,
+        color: '#818cf8',
+        row: 1,
+        breakdown: [
+          { label: 'Data Analysis', pct: 50, color: catColors['Data Analysis'] },
+          { label: 'Development', pct: 25, color: catColors['Development'] },
+          { label: 'Scientific Research', pct: 15, color: catColors['Scientific Research'] },
+          { label: 'Writing', pct: 10, color: catColors['Writing'] }
+        ]
+      },
+      {
+        name: 'FAIR Governance',
+        fullName: 'FAIR Data Governance Framework',
+        start: 2023.08,
+        end: 2024.0,
+        color: '#fbbf24',
+        row: 2,
+        breakdown: [
+          { label: 'Architecture Design', pct: 50, color: catColors['Architecture Design'] },
+          { label: 'Development', pct: 25, color: catColors['Development'] },
+          { label: 'Stakeholder Mgmt', pct: 15, color: catColors['Stakeholder Mgmt'] },
+          { label: 'Scientific Research', pct: 10, color: catColors['Scientific Research'] }
+        ]
+      },
+      {
+        name: 'Colocalization',
+        fullName: 'Causal Gene Discovery Pipeline',
+        start: 2024.0,
+        end: 2026.25,
+        color: '#38bdf8',
+        row: 1,
+        breakdown: [
+          { label: 'Data Analysis', pct: 40, color: catColors['Data Analysis'] },
+          { label: 'Architecture Design', pct: 30, color: catColors['Architecture Design'] },
+          { label: 'Writing', pct: 15, color: catColors['Writing'] },
+          { label: 'Scientific Research', pct: 15, color: catColors['Scientific Research'] }
+        ]
+      },
+      {
+        name: 'Single-Cell',
+        fullName: 'Single-Cell Trajectory Analysis (eLife)',
+        start: 2025.0,
+        end: 2026.25,
+        color: '#c084fc',
+        row: 2,
+        breakdown: [
+          { label: 'Data Analysis', pct: 50, color: catColors['Data Analysis'] },
+          { label: 'Scientific Research', pct: 20, color: catColors['Scientific Research'] },
+          { label: 'Development', pct: 20, color: catColors['Development'] },
+          { label: 'Writing', pct: 10, color: catColors['Writing'] }
+        ]
+      }
+    ];
+
+    var minYear = 2018;
+    var maxYear = 2027;
+    var totalYears = maxYear - minYear;
+
+    // Render year labels
+    for (var y = minYear; y <= maxYear; y++) {
+      var label = document.createElement('span');
+      label.className = 'year-label';
+      label.textContent = y;
+      yearsContainer.appendChild(label);
+    }
+
+    // Render project blocks
+    var rowHeight = 34;
+    var topPadding = 10;
+
+    projects.forEach(function (proj) {
+      var block = document.createElement('div');
+      block.className = 'timeline-block';
+
+      var leftPct = ((proj.start - minYear) / totalYears) * 100;
+      var widthPct = ((proj.end - proj.start) / totalYears) * 100;
+      var topPos = topPadding + proj.row * rowHeight;
+
+      block.style.left = leftPct + '%';
+      block.style.width = widthPct + '%';
+      block.style.top = topPos + 'px';
+      block.style.background = 'linear-gradient(135deg, ' + proj.color + ', ' + proj.color + 'aa)';
+      block.style.border = '1px solid ' + proj.color + '66';
+
+      var labelSpan = document.createElement('span');
+      labelSpan.className = 'timeline-block-label';
+      labelSpan.textContent = proj.name;
+      block.appendChild(labelSpan);
+
+      // Hover events
+      block.addEventListener('mouseenter', function (e) {
+        showTooltip(proj, e.currentTarget);
+      });
+      block.addEventListener('mouseleave', function () {
+        hideTooltip();
+      });
+
+      track.appendChild(block);
+    });
+
+    // ---- Annotation Layer: Research Phases ----
+    var annotations = [
+      { label: 'Deep Learning Architecture', start: 2019, end: 2021, color: '#f472b6' },
+      { label: 'Long-Read Transcriptomics & Proteomics Integration', start: 2022, end: 2023, color: '#818cf8' },
+      { label: 'Statistical Genetics', start: 2023, end: 2026, color: '#38bdf8' }
+    ];
+
+    var annotationRow = document.createElement('div');
+    annotationRow.className = 'timeline-annotations';
+
+    annotations.forEach(function (anno) {
+      var bar = document.createElement('div');
+      bar.className = 'annotation-bar';
+
+      var leftPct = ((anno.start - minYear) / totalYears) * 100;
+      var widthPct = ((anno.end - anno.start) / totalYears) * 100;
+
+      bar.style.left = leftPct + '%';
+      bar.style.width = widthPct + '%';
+      bar.style.borderColor = anno.color;
+      bar.style.background = anno.color + '12';
+
+      var annoLabel = document.createElement('span');
+      annoLabel.className = 'annotation-label';
+      annoLabel.textContent = anno.label;
+      annoLabel.style.color = anno.color;
+      bar.appendChild(annoLabel);
+
+      annotationRow.appendChild(bar);
+    });
+
+    track.parentElement.appendChild(annotationRow);
+
+    function showTooltip(proj, blockEl) {
+      tooltipTitle.textContent = proj.fullName;
+
+      var startYear = Math.floor(proj.start);
+      var endLabel = proj.end >= 2026 ? 'Present' : Math.floor(proj.end);
+      tooltipPeriod.textContent = startYear + ' — ' + endLabel;
+
+      // Draw donut chart
+      drawDonut(proj.breakdown);
+
+      // Build legend
+      tooltipLegend.innerHTML = '';
+      proj.breakdown.forEach(function (seg) {
+        var item = document.createElement('div');
+        item.className = 'legend-item';
+        var dot = document.createElement('span');
+        dot.className = 'legend-dot';
+        dot.style.background = seg.color;
+        var text = document.createTextNode(seg.label + ' ' + seg.pct + '%');
+        item.appendChild(dot);
+        item.appendChild(text);
+        tooltipLegend.appendChild(item);
+      });
+
+      // Position tooltip above block
+      var trackRect = track.getBoundingClientRect();
+      var blockRect = blockEl.getBoundingClientRect();
+      var blockCenterX = blockRect.left + blockRect.width / 2 - trackRect.left;
+
+      tooltip.style.left = blockCenterX + 'px';
+      tooltip.style.top = (blockEl.offsetTop - 8) + 'px';
+      tooltip.classList.add('visible');
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('visible');
+    }
+
+    function drawDonut(segments) {
+      var ctx = tooltipCanvas.getContext('2d');
+      var size = 160;
+      var dpr = window.devicePixelRatio || 1;
+      tooltipCanvas.width = size * dpr;
+      tooltipCanvas.height = size * dpr;
+      tooltipCanvas.style.width = size + 'px';
+      tooltipCanvas.style.height = size + 'px';
+      ctx.scale(dpr, dpr);
+
+      var cx = size / 2;
+      var cy = size / 2;
+      var outerR = 64;
+      var innerR = 38;
+      var startAngle = -Math.PI / 2;
+
+      ctx.clearRect(0, 0, size, size);
+
+      segments.forEach(function (seg) {
+        var sliceAngle = (seg.pct / 100) * 2 * Math.PI;
+        var endAngle = startAngle + sliceAngle;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, outerR, startAngle, endAngle);
+        ctx.arc(cx, cy, innerR, endAngle, startAngle, true);
+        ctx.closePath();
+        ctx.fillStyle = seg.color;
+        ctx.fill();
+
+        // Draw percentage text on larger segments
+        if (seg.pct >= 15) {
+          var midAngle = startAngle + sliceAngle / 2;
+          var textR = (outerR + innerR) / 2;
+          var tx = cx + textR * Math.cos(midAngle);
+          var ty = cy + textR * Math.sin(midAngle);
+          ctx.fillStyle = '#0f0f23';
+          ctx.font = 'bold 10px Inter, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(seg.pct + '%', tx, ty);
+        }
+
+        startAngle = endAngle;
+      });
+
+      // Center hole glow
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerR - 1, 0, 2 * Math.PI);
+      ctx.fillStyle = 'rgba(15, 15, 35, 0.9)';
+      ctx.fill();
+    }
   }
 
   // Wait for DOM + libs
