@@ -8,7 +8,7 @@
     "avatar": "assets/avatar.jpg",
     "social": {
       "github": "https://github.com/Sktbanerjee1",
-      "linkedin": "https://www.linkedin.com/in/s-bandyopadhyay-",
+      "linkedin": "https://www.linkedin.com/in/sbandyopadhyay-",
       "scholar": "[REPLACE] https://scholar.google.com/citations?user=YOUR_ID"
     }
   },
@@ -23,7 +23,7 @@
     "cta_link": "#projects"
   },
   "about": {
-    "bio": "I am an engineer focused on building next-generation data solutions. Increasing data volume across domains requires scalable, robust, auditable processes and data pipelines to generate actionable business intelligence. I bring systems design, data-driven storytelling, and production-grade software development to engineering teams tackling hard problems that benefit humanity.",
+    "bio": "Computational biologist with 7+ years of experience shipping production-grade bioinformatics pipelines across multi-modal data streams — NGS, GWAS, eQTL, RNA-seq, single-cell, and clinical imaging. Coauthored 3 peer-reviewed papers including JCI Insight 2025. Built a causal-gene-discovery pipeline at UVA that identified 10+ validation-ready targets — selected as Reviewer's Choice Abstract at ASHG 2025; architected FAIR data-governance frameworks for large-scale causal inference modeling.",
     "highlights": [
       {
         "icon": "settings",
@@ -52,7 +52,7 @@
       "title": "RAPID-CT: AI-Powered Brain Hemorrhage Detection",
       "description": "Deep learning framework detecting Intracranial Hemorrhage from brain CT scans using segmentation-based ResNet architecture. Engineered a PII-blind REST API with split-key encryption for clinical deployment — because no patient should wait for a diagnosis while their data waits for permission.",
       "tech": ["PyTorch", "ResNet", "Medical Imaging", "REST API", "Encryption"],
-      "outcome": "Reduced per-case processing time by 75% by deploying clinical-grade AI inference pipeline",
+      "outcome": "Produced 98% accuracy in radiologist-based validation and reduced per-case processing time by 60% via clinical-grade AI inference pipeline",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/rapid-ct.png"
@@ -61,7 +61,7 @@
       "title": "Causal Gene Discovery Pipeline",
       "description": "Computational colocalization pipeline integrating GWAS and bulk RNA-seq eQTL data to identify candidate causal genes in Diversity Outbred mice. Implemented conditional analysis with bootstrapping to validate concordance between conditional and colocalization signals.",
       "tech": ["R", "coloc", "bnlearn", "GWAS", "eQTL", "HPC/SLURM"],
-      "outcome": "Identified candidate causal genes associated with variation of bone strength that can potentially serve as therapeutic targets or biomarkers",
+      "outcome": "Identified a novel lncRNA and 2 protein-coding genes providing mechanistic interpretation of BMD-GWAS loci — selected as Reviewer's Choice Abstract at ASHG 2025",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/colocalization.png"
@@ -70,7 +70,7 @@
       "title": "Proteogenomics: Beyond the Reference Genome",
       "description": "Nextflow-based pipeline integrating long-read RNA sequencing with mass spectrometry to discover novel transcript isoforms and protein products absent from GENCODE annotations. Rewriting what we thought we knew about the proteome.",
       "tech": ["Nextflow", "Long-Read Seq", "Mass Spectrometry", "Proteomics"],
-      "outcome": "Democratised the process of alternative proteome detection through integration of long-read transcriptomics and targeted proteomics",
+      "outcome": "Identified novel isoforms absent from GENCODE by integrating 2 modalities (RNA-seq + targeted mass spectrometry) — published in JASMS 2024",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/proteogenomics.png"
@@ -79,7 +79,7 @@
       "title": "Single-Cell Trajectory Analysis of Bone Marrow",
       "description": "Pseudotime trajectory analysis on single-cell RNA-seq data characterizing gene expression dynamics along osteoblast and osteoclast differentiation in bone marrow stromal cells — mapping the molecular choreography of bone formation.",
       "tech": ["Slingshot", "Scanpy", "scRNA-seq", "WGCNA", "Bayesian Networks"],
-      "outcome": "Quantified importance of gene expression in differentiation trajectory",
+      "outcome": "Identified 5 novel genes likely important for osteoblast and osteoclast differentiation from BMSC scRNA-seq data",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/single-cell.png"
@@ -88,7 +88,7 @@
       "title": "Low-Pass WGS Processing Pipeline",
       "description": "High-throughput processing pipeline for Low-Pass Whole Genome Sequencing achieving 15% reduction in genotyping costs while maintaining fidelity for downstream haplotype calling and eQTL analysis.",
       "tech": ["Python", "Bash", "SLURM", "WGS", "Imputation"],
-      "outcome": "Reduced per-sample genotyping cost by 60% (~$100 → ~$40) across 1,000+ samples while preserving fidelity for downstream haplotype calling and eQTL analysis",
+      "outcome": "Cut mouse genotyping costs 15% while preserving 98% accuracy in genotype calls for downstream haplotype calling and eQTL analysis",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/lpwgs.png"
@@ -97,7 +97,7 @@
       "title": "FAIR Data Governance Framework",
       "description": "Architected a standardized data governance framework enforcing FAIR principles across all research data assets — transforming chaos into a reproducible, audit-ready ecosystem.",
       "tech": ["FAIR Principles", "Data Governance", "ETL", "Metadata Standards"],
-      "outcome": "Transformed an unstructured multi-researcher environment into a reproducible, FAIR-compliant data ecosystem serving 20+ researchers across the department",
+      "outcome": "Standardized FAIR data-governance for shared NGS infrastructure across 5+ concurrent projects via automated metadata, provenance tracking, and CI/CD",
       "github": "[REPLACE] https://github.com/...",
       "demo": "",
       "image": "assets/fair.png"
@@ -105,22 +105,36 @@
   ],
   "skills": {
     "Clinical Pipeline Design": ["CLIA/CAP Compliance", "HIPAA/SOC 2", "Automated Validation Gates", "Audit Trail Logging", "Redundancy & Failover", "Real-Time QC Monitoring"],
-    "Pipeline Engineering": ["Nextflow", "Snakemake", "Illumina DRAGEN", "SLURM/HPC", "Docker/Singularity", "Checkpoint & Retry Logic", "FAIR Governance"],
-    "Statistical Genetics & Causal Inference": ["GWAS", "eQTL Mapping", "Colocalization (coloc)", "Bayesian Networks (bnlearn)", "Bootstrapping", "Mendelian Randomization"],
-    "Genomics & Multi-Omics": ["WGS/LP-WGS", "Long-Read RNA-seq", "Proteogenomics", "Variant Calling", "Genotype Imputation", "Epigenomics"],
-    "Deep Learning & AI": ["PyTorch", "ResNet", "Medical Image Segmentation", "Clinical NLP", "REST API Deployment", "Real-Time Inference"],
+    "Pipeline Engineering": ["Nextflow", "Snakemake", "WDL/CWL", "Illumina DRAGEN", "SLURM/HPC", "Docker/Singularity", "FAIR Governance", "Automated ETL"],
+    "Statistical Genetics & Causal Inference": ["GWAS", "eQTL Mapping", "Colocalization (coloc)", "Conditional Analysis w/ Bootstrapping", "Bayesian Networks (bnlearn)", "Mendelian Randomization"],
+    "Genomics & Multi-Omics": ["WGS/LP-WGS", "DNA-seq", "Long-Read RNA-seq", "ChIP-seq/Cut&Run", "Proteogenomics", "Variant Calling"],
+    "ML/DL & Public Data": ["ResNet CNNs", "Medical Image Segmentation", "Cancer Genomics", "TCGA", "CPTAC", "GENCODE", "SRA", "GEO", "PRIDE"],
     "Single-Cell & Network Biology": ["scRNA-seq", "Slingshot", "WGCNA", "Cell-Type Deconvolution", "Hub Gene Identification", "Gene Regulatory Networks"],
-    "Programming & Tools": ["Python", "R", "Bash", "SQL", "Git", "Linux/Unix", "Jupyter", "Docker"]
+    "Programming & Tools": ["Python", "R", "Bash", "SQL", "Git", "Linux/Unix", "SLURM/HPC", "Cloud Computing", "REST APIs", "Jupyter", "R Markdown"]
   },
+  "education": [
+    {
+      "institution": "University of Virginia",
+      "degree": "MS, Biological & Physical Sciences",
+      "period": "Aug 2024 — May 2026 (exp.)",
+      "note": "Precision Health Initiative Trainee Stipend (2025)"
+    },
+    {
+      "institution": "Kalinga Institute of Industrial Technology",
+      "degree": "B.Tech & M.Tech (Dual), Biotechnology",
+      "period": "2012 — 2017",
+      "note": ""
+    }
+  ],
   "experience": [
     {
       "role": "Computational Biology Research Fellow",
       "company": "University of Virginia — Dept. of Genome Sciences",
       "period": "Aug 2024 — Present",
       "bullets": [
-        "Discovered 2 novel genes associated with bone strength by designing a scalable colocalization pipeline integrating Diversity Outbred mouse and human GWAS/eQTL data with conditional analysis and bootstrapping validation; leading manuscript preparation",
-        "Reduced HPC batch runtime by 50% (48h → 24h) for 200-sample genome reconstruction jobs by implementing vectorized data object handling and optimized SLURM thread allocation, accelerating iterative analysis cycles",
-        "Prioritized candidate genes for experimental validation by constructing modular WGCNA modules with Bayesian network hub gene identification, engineered with checkpoint-based fault tolerance for multi-day compute jobs"
+        "Built a colocalization pipeline integrating Diversity-Outbred mouse GWAS with bulk RNA-seq eQTL data; designed qPCR experimental validation of loci, identifying a novel lncRNA and 2 protein-coding genes and providing a mechanistic interpretation of BMD-GWAS loci — selected as Reviewer's Choice Abstract at ASHG 2025",
+        "Identified 10+ validation-ready bone cell-type-specific (osteoblast, osteoclast) key driver genes through integration of bulk RNA-seq deconvolution and WGCNA",
+        "Performed Slingshot pseudotime trajectory analysis on scRNA-seq data generated on BMSC to identify 5 novel genes likely important for osteoblast and osteoclast differentiation"
       ]
     },
     {
@@ -128,48 +142,27 @@
       "company": "University of Virginia — Dept. of Genome Sciences",
       "period": "Sep 2022 — Jul 2024",
       "bullets": [
-        "Saved 60% per-sample genotyping cost (~$100 → ~$40) across 1,000+ samples by building an end-to-end LP-WGS processing pipeline, preserving fidelity for downstream haplotype calling and eQTL analysis",
-        "Discovered novel protein isoforms absent from GENCODE reference (published in JASMS, 2024) by deploying a Nextflow-based proteogenomics pipeline integrating long-read RNA-seq with mass spectrometry",
-        "Standardized 50+ research datasets across 20+ researchers into a reproducible, audit-ready ecosystem by architecting a FAIR data governance framework with metadata standards and ETL automation"
+        "Mentored a BioLab exchange student from Poland in a project building a high-throughput Low-Pass WGS pipeline for haplotype calling and eQTL analysis, cutting mouse genotyping costs 15% while preserving 98% accuracy in genotype calls",
+        "Deployed a Nextflow Long-Read Proteogenomics pipeline integrating 2 modalities (RNA-seq + targeted mass spectrometry), identifying novel isoforms absent from GENCODE (Korchak et al., JASMS 2024)",
+        "Designed FAIR data-governance standards for shared NGS infrastructure across 5+ concurrent projects through automated metadata and provenance tracking along with a version-controlled CI/CD pipeline"
       ]
     },
     {
       "role": "Bioinformatician, Assay Productization",
-      "company": "PierianDx (Clinical Genomics — CLIA/CAP Certified)",
+      "company": "PierianDx",
       "period": "Oct 2021 — Jun 2022",
       "bullets": [
-        "Shipped a QC validation pipeline adopted as the organization-wide standard for all DRAGEN-based clinical assays, processing 200–1,000 patient samples/week within a CLIA/CAP-certified, HIPAA + SOC 2-compliant environment",
-        "Prevented downstream clinical errors by designing automated validation gates that flagged sequencing failures, caught anomalous runs, and reduced manual QC review turnaround time",
-        "Ensured regulatory traceability across all pipeline runs by implementing audit trail logging and redundancy/failover patterns in a highly regulated clinical genomics environment",
-        "Improved engineering team utilization by developing a resource allocation engine that optimized staff deployment across concurrent assay productization workstreams"
-      ]
-    },
-    {
-      "role": "IT Consultant",
-      "company": "Governing Health Futures 2030 (The Lancet & Financial Times Commission)",
-      "period": "Oct 2020 — Sep 2021",
-      "bullets": [
-        "Shaped digital health infrastructure strategy for a global commission co-chaired by The Lancet and Financial Times by delivering technical architecture reviews and scalability assessments",
-        "Strengthened engineering rigor of public health data systems by performing code reviews and architecture assessments that aligned infrastructure design with best practices"
+        "Delivered a sequence QC module for the Clinical Genomics Workspace, written with Python and WDL using the Illumina DRAGEN platform, processing 200–1,000 patient samples per week and supporting customer retention for the assay-productization team"
       ]
     },
     {
       "role": "Senior Project Associate",
-      "company": "CSIR-IGIB — Institute of Genomics and Integrative Biology",
+      "company": "CSIR — Institute of Genomics and Integrative Biology (IGIB)",
       "period": "Nov 2018 — Sep 2021",
       "bullets": [
-        "Achieved 98% accuracy against radiologist-labeled ground truth and reduced per-case evaluation time from 20 minutes to 5 minutes by developing the RAPID-CT deep learning framework, validated on 1,000+ CT scans with sub-2-minute inference latency in partnership with a hospital collaborator",
-        "Enabled privacy-preserving clinical AI deployment by engineering a PII-blind REST API with split-key encryption, redundant inference paths, and health monitoring endpoints",
-        "Democratized cancer genomics data for 30+ researchers across multiple institutions by building automated monitoring pipelines and dashboards for TCGA/CPTAC datasets with real-time quality alerting",
-        "Mentored junior researchers and presented findings at national conferences, contributing to the institute's computational biology training pipeline"
-      ]
-    },
-    {
-      "role": "Bioinformatics Intern",
-      "company": "Elucidata Corporation",
-      "period": "Sep 2018 — Nov 2018",
-      "bullets": [
-        "Shipped somatic mutation visualization modules integrated into Elucidata's Polly platform by engineering client-facing dashboard components for cancer genomics variant data exploration"
+        "Led the architecture design of RAPID-CT, a radiology image classification system built on a ResNet-backbone deep-learning framework for intracranial hemorrhage detection from brain CT scans that produced 98% accuracy in radiologist-based validation and reduced per-case processing time by 60%",
+        "Engineered a PII-blind REST API with a 2-key split-encryption scheme, resolving a critical privacy bottleneck for clinical informatics infrastructure",
+        "Led the development of ProMetaDB, a semi-automated annotation framework integrating 3 public repositories (PRIDE, JASPAR, iProX) to construct a tissue-specific proteome atlas"
       ]
     }
   ],
