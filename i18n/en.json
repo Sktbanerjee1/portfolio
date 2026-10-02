@@ -85,6 +85,8 @@
     "skills.projects": "{n} related projects",
     "country.in": "India",
     "country.us": "United States",
-    "country.pl": "Poland"
+    "country.pl": "Poland",
+    "media.input": "INPUT",
+    "media.detection": "DETECTION"
   }
 }

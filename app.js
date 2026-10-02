@@ -384,7 +384,7 @@
       // with a raw frame underneath, CSS plays raw scan -> sweep -> detection overlay on a loop
       var media = el('div', { class: 'media' + (raw ? ' detect' : ''), 'aria-hidden': 'true' }, raw ? [
         el('img', { src: raw, alt: '', loading: 'lazy', decoding: 'async' }), im,
-        el('span', { class: 'scanline' }), el('span', { class: 'phase raw', text: 'INPUT' }), el('span', { class: 'phase det', text: 'DETECTION' })
+        el('span', { class: 'scanline' }), el('span', { class: 'phase raw', text: t('media.input') }), el('span', { class: 'phase det', text: t('media.detection') })
       ] : [im]);
       if (raw) im.className = 'overlay';
       card.classList.add('has-media'); card.appendChild(media);
