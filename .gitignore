@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────
+# Secrets & credentials
+# ─────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+# ─────────────────────────────────────────────────────────────
+# OS junk
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ─────────────────────────────────────────────────────────────
+# Editors / IDEs
+# ─────────────────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# ─────────────────────────────────────────────────────────────
+# Node / tooling (if a build step is added later)
+# ─────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log
+.npm/
+.cache/
+dist/
+.parcel-cache/
+
+# ─────────────────────────────────────────────────────────────
+# Local scratch — keep working notes out of the deployed site
+# ─────────────────────────────────────────────────────────────
+_local/
+_scratch/
+*.local.md
+audit/

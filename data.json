@@ -1,29 +1,74 @@
 {
+  "_schema_version": "2.1",
+  "_updated": "2026-10-02",
   "meta": {
     "name": "Saikat Bandyopadhyay",
-    "title": "Full-Stack Biomedical Data Scientist & Clinical Pipeline Architect",
-    "tagline": "Decoding the language of life to end human suffering",
+    "initials": "SB",
+    "title": "Senior Data Engineer",
+    "subtitle": "Data pipelines, databases, and ML systems for regulated and industrial environments",
     "email": "saikat.bandyopadhyay.dsx@gmail.com",
-    "location": "Charlottesville, VA",
-    "avatar": "assets/avatar.jpg",
+    "location": "Katowice, Poland",
     "social": {
       "github": "https://github.com/Sktbanerjee1",
-      "linkedin": "https://www.linkedin.com/in/sbandyopadhyay-",
-      "scholar": "[REPLACE] https://scholar.google.com/citations?user=YOUR_ID"
-    }
+      "linkedin": "https://www.linkedin.com/in/s-bandyopadhyay-",
+      "scholar": "https://scholar.google.com/citations?hl=en&user=rd9BjkYAAAAJ"
+    },
+    "availability": "Open to senior Data Engineer, ML Engineer, and Data Scientist roles — on-site in Katowice/Silesia or remote within the EU.",
+    "photo": null,
+    "photo_fallback": "initials"
   },
   "hero": {
+    "greeting": "Hello, I'm",
     "typed_strings": [
-      "Full-Stack Biomedical Data Scientist",
-      "Clinical Pipeline Architect",
-      "ML Engineer",
-      "Health AI Systems Builder"
+      "Data Scientist",
+      "Solution Architect",
+      "AI Engineer",
+      "Control Systems Developer"
     ],
-    "cta_text": "Explore My Mission",
-    "cta_link": "#projects"
+    "tagline": "Decoding complex systems with data",
+    "cta_primary": {
+      "text": "View Projects",
+      "link": "#projects"
+    },
+    "cta_secondary": {
+      "text": "Contact Me",
+      "link": "#contact"
+    }
   },
   "about": {
-    "bio": "Computational biologist with 7+ years of experience shipping production-grade bioinformatics pipelines across multi-modal data streams — NGS, GWAS, eQTL, RNA-seq, single-cell, and clinical imaging. Coauthored 3 peer-reviewed papers including JCI Insight 2025. Built a causal-gene-discovery pipeline at UVA that identified 10+ validation-ready targets — selected as Reviewer's Choice Abstract at ASHG 2025; architected FAIR data-governance frameworks for large-scale causal inference modeling.",
+    "paragraphs": [
+      "I am a senior data engineer with nearly nine years of experience building production data pipelines, databases, and ML systems.",
+      "I have shipped a data-quality gate for a CLIA/CAP, HIPAA and SOC 2 regulated production platform serving external customers, a privacy-preserving ML service behind an encrypted REST API, and HPC pipelines processing terabyte-scale datasets. At SimTec I build data pipelines for industrial plant data from process historians and SCADA systems.",
+      "I focus on reproducibility, testing, monitoring, and data governance — the properties that separate prototypes from production systems."
+    ],
+    "stats": [
+      {
+        "id": "years",
+        "auto": "years",
+        "suffix": "+",
+        "label": "Years of professional experience"
+      },
+      {
+        "id": "countries",
+        "value": 3,
+        "flags": [
+          "in",
+          "us",
+          "pl"
+        ],
+        "label": "Countries worked in"
+      },
+      {
+        "id": "orgs",
+        "auto": "organizations",
+        "label": "Institutes & companies"
+      },
+      {
+        "id": "conferences",
+        "value": 2,
+        "label": "International conference presentations"
+      }
+    ],
     "highlights": [
       {
         "icon": "settings",
@@ -33,7 +78,7 @@
       {
         "icon": "shield-check",
         "label": "Audit-Ready",
-        "value": "Traceable, fault-tolerant systems for highly regulated environments — CLIA/CAP, HIPAA/SOC 2, healthcare, and industrial compliance"
+        "value": "Traceable, fault-tolerant systems for regulated environments — CLIA/CAP, HIPAA/SOC 2, healthcare, and industrial compliance"
       },
       {
         "icon": "lock",
@@ -42,128 +87,1129 @@
       },
       {
         "icon": "brain",
-        "label": "Deep Learning",
-        "value": "Statistical modeling, mathematical simulation, and neural networks — from Bayesian causal inference to real-time medical image classification"
+        "label": "Modeling, ML & LLMs",
+        "value": "Deep learning, LLM skill and prompt design, and mechanistic interpretability of neural networks"
       }
     ]
   },
-  "projects": [
+  "domains": [
     {
-      "title": "RAPID-CT: AI-Powered Brain Hemorrhage Detection",
-      "description": "Deep learning framework detecting Intracranial Hemorrhage from brain CT scans using segmentation-based ResNet architecture. Engineered a PII-blind REST API with split-key encryption for clinical deployment — because no patient should wait for a diagnosis while their data waits for permission.",
-      "tech": ["PyTorch", "ResNet", "Medical Imaging", "REST API", "Encryption"],
-      "outcome": "Produced 98% accuracy in radiologist-based validation and reduced per-case processing time by 60% via clinical-grade AI inference pipeline",
-      "github": "[REPLACE] https://github.com/...",
-      "demo": "",
-      "image": "assets/rapid-ct.png"
+      "id": "biomedical",
+      "label": "Biomedical & Clinical",
+      "color": "#818cf8"
     },
     {
-      "title": "Causal Gene Discovery Pipeline",
-      "description": "Computational colocalization pipeline integrating GWAS and bulk RNA-seq eQTL data to identify candidate causal genes in Diversity Outbred mice. Implemented conditional analysis with bootstrapping to validate concordance between conditional and colocalization signals.",
-      "tech": ["R", "coloc", "bnlearn", "GWAS", "eQTL", "HPC/SLURM"],
-      "outcome": "Identified a novel lncRNA and 2 protein-coding genes providing mechanistic interpretation of BMD-GWAS loci — selected as Reviewer's Choice Abstract at ASHG 2025",
-      "github": "[REPLACE] https://github.com/...",
-      "demo": "",
-      "image": "assets/colocalization.png"
+      "id": "data-eng",
+      "label": "Data Engineering",
+      "color": "#2dd4bf"
     },
     {
-      "title": "Proteogenomics: Beyond the Reference Genome",
-      "description": "Nextflow-based pipeline integrating long-read RNA sequencing with mass spectrometry to discover novel transcript isoforms and protein products absent from GENCODE annotations. Rewriting what we thought we knew about the proteome.",
-      "tech": ["Nextflow", "Long-Read Seq", "Mass Spectrometry", "Proteomics"],
-      "outcome": "Identified novel isoforms absent from GENCODE by integrating 2 modalities (RNA-seq + targeted mass spectrometry) — published in JASMS 2024",
-      "github": "[REPLACE] https://github.com/...",
-      "demo": "",
-      "image": "assets/proteogenomics.png"
+      "id": "industrial",
+      "label": "Industrial Automation",
+      "color": "#94a3b8"
     },
     {
-      "title": "Single-Cell Trajectory Analysis of Bone Marrow",
-      "description": "Pseudotime trajectory analysis on single-cell RNA-seq data characterizing gene expression dynamics along osteoblast and osteoclast differentiation in bone marrow stromal cells — mapping the molecular choreography of bone formation.",
-      "tech": ["Slingshot", "Scanpy", "scRNA-seq", "WGCNA", "Bayesian Networks"],
-      "outcome": "Identified 5 novel genes likely important for osteoblast and osteoclast differentiation from BMSC scRNA-seq data",
-      "github": "[REPLACE] https://github.com/...",
-      "demo": "",
-      "image": "assets/single-cell.png"
-    },
-    {
-      "title": "Low-Pass WGS Processing Pipeline",
-      "description": "High-throughput processing pipeline for Low-Pass Whole Genome Sequencing achieving 15% reduction in genotyping costs while maintaining fidelity for downstream haplotype calling and eQTL analysis.",
-      "tech": ["Python", "Bash", "SLURM", "WGS", "Imputation"],
-      "outcome": "Cut mouse genotyping costs 15% while preserving 98% accuracy in genotype calls for downstream haplotype calling and eQTL analysis",
-      "github": "[REPLACE] https://github.com/...",
-      "demo": "",
-      "image": "assets/lpwgs.png"
-    },
-    {
-      "title": "FAIR Data Governance Framework",
-      "description": "Architected a standardized data governance framework enforcing FAIR principles across all research data assets — transforming chaos into a reproducible, audit-ready ecosystem.",
-      "tech": ["FAIR Principles", "Data Governance", "ETL", "Metadata Standards"],
-      "outcome": "Standardized FAIR data-governance for shared NGS infrastructure across 5+ concurrent projects via automated metadata, provenance tracking, and CI/CD",
-      "github": "[REPLACE] https://github.com/...",
-      "demo": "",
-      "image": "assets/fair.png"
+      "id": "ml",
+      "label": "Machine Learning",
+      "color": "#fb923c"
     }
   ],
-  "skills": {
-    "Clinical Pipeline Design": ["CLIA/CAP Compliance", "HIPAA/SOC 2", "Automated Validation Gates", "Audit Trail Logging", "Redundancy & Failover", "Real-Time QC Monitoring"],
-    "Pipeline Engineering": ["Nextflow", "Snakemake", "WDL/CWL", "Illumina DRAGEN", "SLURM/HPC", "Docker/Singularity", "FAIR Governance", "Automated ETL"],
-    "Statistical Genetics & Causal Inference": ["GWAS", "eQTL Mapping", "Colocalization (coloc)", "Conditional Analysis w/ Bootstrapping", "Bayesian Networks (bnlearn)", "Mendelian Randomization"],
-    "Genomics & Multi-Omics": ["WGS/LP-WGS", "DNA-seq", "Long-Read RNA-seq", "ChIP-seq/Cut&Run", "Proteogenomics", "Variant Calling"],
-    "ML/DL & Public Data": ["ResNet CNNs", "Medical Image Segmentation", "Cancer Genomics", "TCGA", "CPTAC", "GENCODE", "SRA", "GEO", "PRIDE"],
-    "Single-Cell & Network Biology": ["scRNA-seq", "Slingshot", "WGCNA", "Cell-Type Deconvolution", "Hub Gene Identification", "Gene Regulatory Networks"],
-    "Programming & Tools": ["Python", "R", "Bash", "SQL", "Git", "Linux/Unix", "SLURM/HPC", "Cloud Computing", "REST APIs", "Jupyter", "R Markdown"]
-  },
-  "education": [
+  "projects": [
     {
-      "institution": "University of Virginia",
-      "degree": "MS, Biological & Physical Sciences",
-      "period": "Aug 2024 — May 2026 (exp.)",
-      "note": "Precision Health Initiative Trainee Stipend (2025)"
+      "id": "rapid-ct",
+      "title": "RAPID-CT: Brain Hemorrhage Detection",
+      "domains": [
+        "ml",
+        "biomedical"
+      ],
+      "featured": true,
+      "status": "completed",
+      "org": "CSIR-IGIB",
+      "period": {
+        "start": "2018-11",
+        "end": "2021-09"
+      },
+      "description": "Deep learning model that detects brain bleeds (intracranial hemorrhage) on CT scans. Served through a REST API that never sees patient identity, protected by split-key encryption.",
+      "outcome": "98% accuracy against radiologist labels on 1,000+ CT scans; 60% less processing time per case.",
+      "metrics": [
+        {
+          "value": "98%",
+          "label": "accuracy vs. radiologist labels"
+        },
+        {
+          "value": "60%",
+          "label": "faster per case"
+        }
+      ],
+      "tech": [
+        "PyTorch (prototype)",
+        "TensorFlow/Keras (production)",
+        "ResNet",
+        "REST API",
+        "Encryption",
+        "Python"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": "assets/case/rapid-ct-thumb.jpg",
+      "image_raw": "assets/case/rapid-ct-raw.jpg",
+      "case_study": {
+        "enabled": true,
+        "problem": "Detect intracranial hemorrhage on brain CT fast enough to support triage, without exposing patient identity.",
+        "role": "Architecture and development lead",
+        "architecture": "CT images → de-identification → ResNet classifier → PII-blind REST API with two-key split encryption",
+        "data_scale": "1,000+ CT scans",
+        "results": "98% accuracy vs. radiologist labels; 60% faster per case",
+        "lessons": null,
+        "visuals": [
+          {
+            "src": "assets/case/rapid-ct-ich.jpg",
+            "alt": "Two copies of an axial brain CT scan side by side. Left: the scan, with bright blood in the ventricles and in the brain tissue beside them. Right: the same scan with a red-to-yellow heatmap over the blood and a dashed box labelled ICH.",
+            "caption": "Axial brain CT with intracerebral and intraventricular hemorrhage (left) and the hemorrhage highlighted on the same slice (right)."
+          }
+        ]
+      },
+      "domain": "ml"
     },
     {
-      "institution": "Kalinga Institute of Industrial Technology",
-      "degree": "B.Tech & M.Tech (Dual), Biotechnology",
-      "period": "2012 — 2017",
-      "note": ""
+      "id": "pieriandx-qc",
+      "scene": "sequencing-qc",
+      "title": "Regulated Sequencing Data-Quality Gate",
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "featured": true,
+      "status": "completed",
+      "org": "PierianDx (now Velsera)",
+      "period": {
+        "start": "2021-10",
+        "end": "2022-06"
+      },
+      "description": "Automated quality gate for a clinical genomics platform: it checks every sequencing run and blocks poor-quality data before it reaches a clinical report. Runs in a regulated CLIA/CAP, HIPAA and SOC 2 environment.",
+      "outcome": "Processed 200–1,000 patient samples per week in production.",
+      "metrics": [
+        {
+          "value": "200–1,000",
+          "label": "samples/week"
+        }
+      ],
+      "tech": [
+        "Python",
+        "WDL",
+        "Illumina DRAGEN",
+        "AWS",
+        "Monitoring"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null,
+      "case_study": {
+        "enabled": true,
+        "problem": "Block low-quality sequencing runs before they reach clinical reporting.",
+        "role": "Bioinformatician, assay productization",
+        "architecture": "DRAGEN output → Python/WDL QC metrics → pass/fail gates → platform workspace",
+        "data_scale": "200–1,000 samples/week",
+        "results": null,
+        "lessons": null,
+        "visuals": []
+      },
+      "domain": "biomedical"
+    },
+    {
+      "id": "db-schemas",
+      "domain": "data-eng",
+      "domains": [
+        "data-eng"
+      ],
+      "title": "Database Schema Design & Deployment",
+      "diagram": {
+        "nodes": [
+          { "icon": "doc", "label": "Normalized model", "detail": "Entities and relations modelled in normal form." },
+          { "icon": "lock", "label": "Constraints", "detail": "Constraints protect integrity; indexes serve the queries." },
+          { "icon": "gear", "label": "SCD-2 history", "detail": "Temporal records keep every past version of a row." },
+          { "icon": "db", "label": "Append-only ledger", "detail": "New rows are added; existing rows are never overwritten." },
+          { "icon": "cloud", "label": "Deployed engines", "detail": "PostgreSQL, SQL Server, MySQL/SQLite, MongoDB and time-series stores." }
+        ]
+      },
+      "featured": true,
+      "status": "ongoing",
+      "org": null,
+      "period": null,
+      "description": "Database schemas designed and deployed on five engines, from PostgreSQL and SQL Server to MongoDB and time-series stores. Built to keep full history: versioned records (SCD-2), append-only ledgers, strict constraints and indexes.",
+      "outcome": "Deployed for internal tools, reporting back-ends and research data platforms.",
+      "metrics": [
+        {
+          "value": "5",
+          "label": "database engines"
+        }
+      ],
+      "tech": [
+        "PostgreSQL",
+        "SQL Server",
+        "MySQL",
+        "SQLite",
+        "MongoDB",
+        "InfluxDB / TimescaleDB",
+        "Schema Design",
+        "SCD-2"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null
+    },
+    {
+      "id": "industrial-reporting",
+      "domain": "data-eng",
+      "domains": [
+        "data-eng",
+        "industrial"
+      ],
+      "title": "Industrial Reporting Templates",
+      "diagram": {
+        "nodes": [
+          { "icon": "plant", "label": "SCADA systems", "detail": "Plant data comes from SCADA systems." },
+          { "icon": "db", "label": "Process Historian", "detail": "SIMATIC Process Historian stores the plant data." },
+          { "icon": "doc", "label": "Report templates", "detail": "SSRS, Power BI Report Server and SIMATIC Information Server." },
+          { "icon": "chart", "label": "Plant reports", "detail": "Production and batch, alarm and event, and process-value trend reports." }
+        ]
+      },
+      "featured": true,
+      "status": "ongoing",
+      "org": null,
+      "period": {
+        "start": "2026-08",
+        "end": null
+      },
+      "description": "Report templates that turn plant data into production, alarm and trend reports for plant operations. Built in SSRS, Power BI Report Server and SIMATIC Information Server on data from SIMATIC Process Historian and SCADA.",
+      "outcome": "Production and batch reports, alarm and event reports, and process-value trend reports for plant operations.",
+      "metrics": [
+        {
+          "value": "3",
+          "label": "reporting platforms"
+        },
+        {
+          "value": "3",
+          "label": "report families"
+        }
+      ],
+      "tech": [
+        "SSRS",
+        "Power BI Report Server",
+        "SIMATIC Information Server",
+        "Process Historian",
+        "SQL Server",
+        "SQL"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null
+    },
+    {
+      "id": "api-integration",
+      "domain": "data-eng",
+      "domains": [
+        "data-eng"
+      ],
+      "title": "API Development & Integration",
+      "diagram": {
+        "nodes": [
+          { "icon": "cloud", "label": "External APIs", "detail": "Scientific repositories, Microsoft Graph, Google Workspace, Notion, Slack and more." },
+          { "icon": "lock", "label": "Authentication", "detail": "API keys, OAuth and encryption." },
+          { "icon": "gear", "label": "Resilient client", "detail": "Pagination, rate limiting, retries and caching." },
+          { "icon": "db", "label": "Pipelines & DBs", "detail": "The data lands in pipelines and databases." },
+          { "icon": "api", "label": "REST APIs", "detail": "REST APIs built with Flask and FastAPI." }
+        ]
+      },
+      "featured": true,
+      "status": "ongoing",
+      "org": null,
+      "period": null,
+      "description": "REST APIs and integrations that move data from external services into pipelines and databases. Built to be reliable and secure: pagination, rate limiting, retries, caching, API keys, OAuth and encryption.",
+      "outcome": "Connected sources include NCBI/Entrez, Ensembl, UniProt, PRIDE, GEO/SRA, Microsoft Graph, Google Workspace, Notion, Todoist, Slack, Google Trends and LLM APIs.",
+      "metrics": [],
+      "tech": [
+        "REST APIs",
+        "Flask / FastAPI",
+        "OAuth",
+        "Microsoft Graph",
+        "Google Workspace APIs",
+        "NCBI / Ensembl / UniProt",
+        "LLM APIs",
+        "Python"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null
+    },
+    {
+      "id": "llm-skills",
+      "domain": "ml",
+      "domains": [
+        "ml"
+      ],
+      "title": "LLM Skills & Prompt Engineering",
+      "diagram": {
+        "nodes": [
+          { "icon": "doc", "label": "Task", "detail": "For example Siemens SCL code review, or analysing a research paper." },
+          { "icon": "gear", "label": "Skill & prompt", "detail": "A task-specific skill and system prompt." },
+          { "icon": "search", "label": "RAG & tool use", "detail": "Retrieval and tool-use pipelines." },
+          { "icon": "model", "label": "Model", "detail": "Local models in LM Studio where code or data must stay on-premises." },
+          { "icon": "check", "label": "Evaluation", "detail": "Outputs are evaluated against test cases." }
+        ]
+      },
+      "featured": true,
+      "status": "ongoing",
+      "org": null,
+      "period": null,
+      "description": "Reusable skills and system prompts that make large language models dependable at a specific job, checked against test cases. Includes retrieval (RAG), tool use, and local models (LM Studio) when code or data cannot leave the premises.",
+      "outcome": "Examples: a Siemens SCL / TIA Portal code-review skill (review, documentation, safety-aware checks) and a skill for critically reading genomics and computational-biology papers.",
+      "metrics": [],
+      "tech": [
+        "LLMs",
+        "Prompt Engineering",
+        "LLM Skill Design",
+        "RAG",
+        "Tool Use",
+        "LM Studio",
+        "Claude",
+        "Python"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null
+    },
+    {
+      "id": "interpretability",
+      "domain": "ml",
+      "domains": [
+        "ml"
+      ],
+      "title": "Mechanistic Interpretability of Deep Learning Models",
+      "diagram": {
+        "nodes": [
+          { "icon": "model", "label": "Trained model", "detail": "Convolutional image classifiers and transformer language models." },
+          { "icon": "search", "label": "Attribution", "detail": "Grad-CAM and saliency maps for image classifiers." },
+          { "icon": "gear", "label": "Model internals", "detail": "Logit lens on the residual stream, attention-head analysis, linear probes." },
+          { "icon": "bolt", "label": "Patching & ablation", "detail": "Activation patching and ablation." },
+          { "icon": "check", "label": "What it relies on", "detail": "Checks that medical-imaging classifiers rely on clinically relevant regions." }
+        ]
+      },
+      "featured": true,
+      "status": "ongoing",
+      "org": null,
+      "period": null,
+      "description": "Opening up neural networks to see how they reach a decision. For image classifiers: Grad-CAM and saliency maps. For transformers: logit lens, attention-head analysis, linear probes and activation patching.",
+      "outcome": "Used to confirm that medical-imaging models look at clinically relevant regions, and to study how language models represent and route information.",
+      "metrics": [],
+      "tech": [
+        "Mechanistic Interpretability",
+        "Grad-CAM",
+        "Logit Lens",
+        "Activation Patching",
+        "Linear Probes",
+        "PyTorch",
+        "Transformers"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null
+    },
+    {
+      "id": "coloc",
+      "title": "Causal Gene Discovery Pipeline",
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "featured": false,
+      "status": "completed",
+      "org": "University of Virginia",
+      "period": {
+        "start": "2024-08",
+        "end": "2026-07"
+      },
+      "description": "Pipeline that links mouse genetic association results (Diversity Outbred GWAS) with gene-expression data (bulk RNA-seq eQTL) to find the genes behind each signal. Checked with conditional analysis and bootstrapping; top candidates confirmed by qPCR.",
+      "outcome": "Found one new lncRNA and two protein-coding genes behind bone mineral density GWAS loci. Reviewer's Choice Abstract, ASHG 2025.",
+      "metrics": [
+        {
+          "value": "3",
+          "label": "candidate causal genes"
+        }
+      ],
+      "tech": [
+        "R",
+        "coloc",
+        "bnlearn",
+        "GWAS",
+        "eQTL",
+        "HPC/SLURM"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": "assets/colocalization.png",
+      "section": "research",
+      "domain": "biomedical"
+    },
+    {
+      "id": "proteogenomics",
+      "title": "Proteogenomics: Beyond the Reference Proteome",
+      "diagram": {
+        "nodes": [
+          { "icon": "wave", "label": "Long-read RNA-seq", "detail": "Transcript isoforms from long-read RNA sequencing." },
+          { "icon": "gear", "label": "Nextflow pipeline", "detail": "Integrates sequencing with mass spectrometry." },
+          { "icon": "chart", "label": "Targeted mass spec", "detail": "Targeted mass spectrometry detects the protein products." },
+          { "icon": "check", "label": "Novel isoforms", "detail": "Protein isoforms absent from GENCODE. Published in JASMS 2024." }
+        ]
+      },
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "featured": true,
+      "status": "published",
+      "org": "University of Virginia",
+      "period": {
+        "start": "2022-09",
+        "end": "2024-07"
+      },
+      "description": "Nextflow pipeline that combines long-read RNA sequencing with targeted mass spectrometry to find transcripts and proteins missing from the standard reference (GENCODE).",
+      "outcome": "Detected new protein isoforms absent from GENCODE. Published in JASMS 2024 (Korchak et al.).",
+      "metrics": [
+        {
+          "value": "2",
+          "label": "data modalities integrated"
+        }
+      ],
+      "tech": [
+        "Nextflow",
+        "Long-Read Seq",
+        "Mass Spectrometry",
+        "Proteomics"
+      ],
+      "links": {
+        "paper": "https://doi.org/10.1021/jasms.4c00119"
+      },
+      "image": "assets/proteogenomics.png",
+      "case_study": {
+        "enabled": false,
+        "problem": null,
+        "role": null,
+        "architecture": null,
+        "data_scale": null,
+        "results": null,
+        "lessons": null,
+        "visuals": []
+      },
+      "domain": "biomedical"
+    },
+    {
+      "id": "scrna-trajectory",
+      "title": "Single-Cell Trajectory Analysis of Bone Marrow",
+      "domains": [
+        "biomedical"
+      ],
+      "featured": false,
+      "status": "completed",
+      "org": "University of Virginia",
+      "period": {
+        "start": "2024-08",
+        "end": "2026-07"
+      },
+      "description": "Single-cell RNA-seq analysis of bone marrow stromal cells, using Slingshot pseudotime to follow how gene activity changes during osteoblast and osteoclast differentiation.",
+      "outcome": "Identified five new genes relevant to osteoblast and osteoclast differentiation.",
+      "metrics": [
+        {
+          "value": "5",
+          "label": "novel candidate genes"
+        }
+      ],
+      "tech": [
+        "Slingshot",
+        "scRNA-seq",
+        "WGCNA",
+        "Bayesian Networks"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": "assets/single-cell.png",
+      "section": "research",
+      "domain": "biomedical"
+    },
+    {
+      "id": "lpwgs",
+      "title": "Low-Pass WGS Processing Pipeline",
+      "diagram": {
+        "nodes": [
+          { "icon": "wave", "label": "Low-pass WGS", "detail": "Low-pass whole genome sequencing of mice." },
+          { "icon": "gear", "label": "HPC pipeline", "detail": "Python and Bash on SLURM, high throughput." },
+          { "icon": "search", "label": "Imputation", "detail": "Genotypes imputed from the low-pass data." },
+          { "icon": "model", "label": "Haplotype calling", "detail": "Genotypes feed haplotype calling." },
+          { "icon": "chart", "label": "eQTL analysis", "detail": "Genotypes feed eQTL analysis." }
+        ]
+      },
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "featured": false,
+      "status": "completed",
+      "org": "University of Virginia",
+      "period": {
+        "start": "2022-09",
+        "end": "2024-07"
+      },
+      "description": "High-throughput pipeline that genotypes mice from low-pass whole genome sequencing, supplying haplotype calling and eQTL analysis. Built while mentoring a visiting BioLab exchange student.",
+      "outcome": "Cut genotyping cost by 15% while keeping 98% genotype-call accuracy.",
+      "metrics": [
+        {
+          "value": "15%",
+          "label": "lower genotyping cost"
+        },
+        {
+          "value": "98%",
+          "label": "genotype-call accuracy"
+        }
+      ],
+      "tech": [
+        "Python",
+        "Bash",
+        "SLURM",
+        "WGS",
+        "Imputation"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": "assets/lpwgs.png",
+      "case_study": {
+        "enabled": false,
+        "problem": null,
+        "role": null,
+        "architecture": null,
+        "data_scale": null,
+        "results": null,
+        "lessons": null,
+        "visuals": []
+      },
+      "domain": "biomedical"
+    },
+    {
+      "id": "fair-governance",
+      "title": "FAIR Data Governance Framework",
+      "diagram": {
+        "nodes": [
+          { "icon": "wave", "label": "NGS projects", "detail": "Concurrent projects on shared NGS infrastructure." },
+          { "icon": "doc", "label": "Metadata capture", "detail": "Metadata is captured automatically." },
+          { "icon": "search", "label": "Provenance", "detail": "Provenance is tracked for the data." },
+          { "icon": "check", "label": "CI/CD", "detail": "Standards live in version control and run through CI/CD." }
+        ]
+      },
+      "domains": [
+        "data-eng"
+      ],
+      "featured": false,
+      "status": "completed",
+      "org": "University of Virginia",
+      "period": {
+        "start": "2022-09",
+        "end": "2024-07"
+      },
+      "description": "Data governance standards for shared sequencing (NGS) infrastructure, so data stays findable and reusable (FAIR): automatic metadata capture, provenance tracking and version-controlled CI/CD.",
+      "outcome": "Standardized governance across 5+ concurrent NGS projects.",
+      "metrics": [
+        {
+          "value": "5+",
+          "label": "concurrent projects governed"
+        }
+      ],
+      "tech": [
+        "FAIR Principles",
+        "Data Governance",
+        "ETL",
+        "Metadata Standards",
+        "CI/CD"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": "assets/fair.png",
+      "domain": "data-eng"
+    },
+    {
+      "id": "time-tracker",
+      "title": "Time Tracking Platform — Ledger Schema",
+      "diagram": {
+        "nodes": [
+          { "icon": "user", "label": "Time entries", "detail": "Time entries are recorded with TIMESTAMPTZ throughout." },
+          { "icon": "db", "label": "Append-only ledger", "detail": "Corrections supersede earlier entries; nothing is overwritten." },
+          { "icon": "lock", "label": "SCD-2 rates", "detail": "Billing rates are kept as temporal records." },
+          { "icon": "gear", "label": "No aggregates", "detail": "No aggregates are stored in the schema." },
+          { "icon": "chart", "label": "Metrics", "detail": "Estimation calibration, earned-value metrics and anomaly detection." }
+        ]
+      },
+      "domains": [
+        "data-eng"
+      ],
+      "featured": true,
+      "status": "in-progress",
+      "org": null,
+      "period": {
+        "start": "2026-08",
+        "end": null
+      },
+      "description": "Time-tracking application with estimate calibration, earned-value metrics and anomaly detection. Its 13-table PostgreSQL 16 schema keeps a full audit trail: time entries are an append-only ledger, billing rates are versioned (SCD-2), and no totals are stored.",
+      "outcome": "Eight behavioral invariants tested against a live PostgreSQL instance.",
+      "metrics": [
+        {
+          "value": "13",
+          "label": "tables"
+        },
+        {
+          "value": "8",
+          "label": "invariant tests"
+        }
+      ],
+      "tech": [
+        "PostgreSQL 16",
+        "SQL",
+        "Schema Design",
+        "SCD-2",
+        "Append-Only Ledger"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null,
+      "case_study": {
+        "enabled": true,
+        "problem": "Track time, rates and budgets with a correct audit history instead of mutable rows.",
+        "role": "Schema designer",
+        "architecture": "PostgreSQL 16: append-only time-entry ledger, SCD-2 rate records, no stored aggregates, TIMESTAMPTZ throughout",
+        "data_scale": "13 tables",
+        "results": "8 behavioral invariants validated against live PostgreSQL",
+        "lessons": null,
+        "visuals": []
+      },
+      "domain": "data-eng"
+    },
+    {
+      "id": "aeroponic-tower",
+      "title": "Aeroponic Tower Control System",
+      "diagram": {
+        "nodes": [
+          { "icon": "gear", "label": "Dosing schedule", "detail": "Selectable dosing schedules." },
+          { "icon": "drop", "label": "Nutrient tanks", "detail": "Nutrients are mixed at set proportions." },
+          { "icon": "plant", "label": "Tower delivery", "detail": "The mix is delivered to the towers." },
+          { "icon": "wave", "label": "Spray nodes", "detail": "Spray is controlled per node on each tower." },
+          { "icon": "bolt", "label": "LED strips", "detail": "LED strips are controlled per tower." }
+        ]
+      },
+      "domains": [
+        "industrial"
+      ],
+      "featured": false,
+      "status": "in-design",
+      "org": null,
+      "period": {
+        "start": "2026-09",
+        "end": null
+      },
+      "description": "Control system for an aeroponic growing tower. It mixes nutrients at set proportions, delivers them to the towers, and controls each spray node and LED strip, with selectable dosing schedules.",
+      "outcome": null,
+      "metrics": [],
+      "tech": [
+        "Control Systems",
+        "Dosing Schedules",
+        "Actuator Control"
+      ],
+      "links": {
+        "paper": null
+      },
+      "image": null,
+      "domain": "industrial"
+    }
+  ],
+  "skills": [
+    {
+      "id": "core",
+      "name": "Programming Languages",
+      "color": "#fbbf24",
+      "items": [
+        {
+          "name": "Python",
+          "short": "Python"
+        },
+        {
+          "name": "SQL",
+          "short": "SQL"
+        },
+        {
+          "name": "R",
+          "short": "R"
+        },
+        {
+          "name": "Bash",
+          "short": "Bash"
+        }
+      ]
+    },
+    {
+      "id": "dataeng",
+      "name": "Data Engineering",
+      "color": "#2dd4bf",
+      "items": [
+        {
+          "name": "PostgreSQL",
+          "short": "PostgreSQL"
+        },
+        {
+          "name": "SQL Server",
+          "short": "SQL Server"
+        },
+        {
+          "name": "MySQL / SQLite",
+          "short": "MySQL"
+        },
+        {
+          "name": "MongoDB",
+          "short": "MongoDB"
+        },
+        {
+          "name": "InfluxDB / TimescaleDB",
+          "short": "Time-series DB"
+        },
+        {
+          "name": "Schema Design (SCD-2, ledgers)",
+          "short": "Schema Design"
+        },
+        {
+          "name": "pandas / Polars",
+          "short": "pandas"
+        },
+        {
+          "name": "Spark / PySpark / Dask",
+          "short": "Spark"
+        }
+      ]
+    },
+    {
+      "id": "apps",
+      "name": "APIs, Integration & Reporting",
+      "color": "#c084fc",
+      "items": [
+        {
+          "name": "REST APIs",
+          "short": "REST APIs"
+        },
+        {
+          "name": "Flask / FastAPI",
+          "short": "FastAPI"
+        },
+        {
+          "name": "OAuth",
+          "short": "OAuth"
+        },
+        {
+          "name": "Microsoft Graph",
+          "short": "Microsoft Graph"
+        },
+        {
+          "name": "Google Workspace APIs",
+          "short": "Google APIs"
+        },
+        {
+          "name": "SSRS",
+          "short": "SSRS"
+        },
+        {
+          "name": "Power BI Report Server",
+          "short": "Power BI RS"
+        },
+        {
+          "name": "Shiny / Dash / Streamlit",
+          "short": "Dashboards"
+        },
+        {
+          "name": "JavaScript",
+          "short": "JavaScript"
+        }
+      ]
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial Data (OT)",
+      "color": "#94a3b8",
+      "items": [
+        {
+          "name": "SIMATIC Process Historian",
+          "short": "Process Historian"
+        },
+        {
+          "name": "SIMATIC Information Server",
+          "short": "Information Server"
+        },
+        {
+          "name": "WinCC / SCADA",
+          "short": "SCADA"
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "Quality & Compliance",
+      "color": "#f472b6",
+      "items": [
+        {
+          "name": "HIPAA / SOC 2",
+          "short": "HIPAA/SOC 2"
+        },
+        {
+          "name": "CLIA / CAP",
+          "short": "CLIA/CAP"
+        },
+        {
+          "name": "GDPR",
+          "short": "GDPR"
+        },
+        {
+          "name": "ISO 27001 / IEC 62443",
+          "short": "ISO/IEC"
+        },
+        {
+          "name": "FAIR Data Governance",
+          "short": "FAIR"
+        },
+        {
+          "name": "Audit Trails & Validation Gates",
+          "short": "Audit Trails"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "name": "Pipelines & Orchestration",
+      "color": "#34d399",
+      "items": [
+        {
+          "name": "Nextflow",
+          "short": "Nextflow"
+        },
+        {
+          "name": "Snakemake",
+          "short": "Snakemake"
+        },
+        {
+          "name": "WDL",
+          "short": "WDL"
+        },
+        {
+          "name": "SLURM / HPC",
+          "short": "HPC"
+        },
+        {
+          "name": "Automated ETL",
+          "short": "ETL"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Bioinformatics",
+      "color": "#818cf8",
+      "items": [
+        {
+          "name": "GWAS / eQTL",
+          "short": "GWAS"
+        },
+        {
+          "name": "Causal Inference (coloc, Bayesian nets)",
+          "short": "Causal Inference"
+        },
+        {
+          "name": "scRNA-seq / WGCNA",
+          "short": "scRNA-seq"
+        },
+        {
+          "name": "Proteogenomics",
+          "short": "Proteogenomics"
+        },
+        {
+          "name": "Illumina DRAGEN",
+          "short": "Illumina DRAGEN"
+        }
+      ]
+    },
+    {
+      "id": "ml",
+      "name": "Machine Learning",
+      "color": "#fb923c",
+      "items": [
+        {
+          "name": "LLMs",
+          "short": "LLMs"
+        },
+        {
+          "name": "Prompt Engineering",
+          "short": "Prompt Engineering"
+        },
+        {
+          "name": "LLM Skill Design",
+          "short": "LLM Skills"
+        },
+        {
+          "name": "RAG",
+          "short": "RAG"
+        },
+        {
+          "name": "Mechanistic Interpretability",
+          "short": "Interpretability"
+        },
+        {
+          "name": "Grad-CAM",
+          "short": "Grad-CAM"
+        },
+        {
+          "name": "PyTorch",
+          "short": "PyTorch"
+        },
+        {
+          "name": "TensorFlow / Keras",
+          "short": "TensorFlow"
+        },
+        {
+          "name": "scikit-learn",
+          "short": "scikit-learn"
+        },
+        {
+          "name": "XGBoost",
+          "short": "XGBoost"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud & DevOps",
+      "color": "#38bdf8",
+      "items": [
+        {
+          "name": "AWS S3",
+          "short": "S3"
+        },
+        {
+          "name": "AWS EC2",
+          "short": "EC2"
+        },
+        {
+          "name": "AWS Batch / Lambda",
+          "short": "Batch/Lambda"
+        },
+        {
+          "name": "Docker / Singularity",
+          "short": "Docker"
+        },
+        {
+          "name": "GitHub Actions",
+          "short": "GitHub Actions"
+        },
+        {
+          "name": "Jenkins",
+          "short": "Jenkins"
+        },
+        {
+          "name": "Git",
+          "short": "Git"
+        }
+      ]
     }
   ],
   "experience": [
     {
+      "id": "simtec",
+      "role": "Data Engineer",
+      "company": "SimTec Sp. z o.o.",
+      "company_note": "Siemens Solution Partner, industrial automation",
+      "location": "Katowice, Poland",
+      "start": "2026-08",
+      "end": null,
+      "domains": [
+        "industrial",
+        "data-eng"
+      ],
+      "compact": false,
+      "bullets": [
+        "Build data pipelines that acquire and analyze industrial plant data from SIMATIC Process Historian, WinCC/SCADA systems, and Information Server.",
+        "Build custom report templates in SQL Server Reporting Services, Power BI Report Server and SIMATIC Information Server for production/batch, alarm and process-value reporting.",
+        "Design and deploy relational schemas and internal data tools on PostgreSQL and SQL Server."
+      ],
+      "logo": "assets/logos/simtec.png",
+      "monogram": "ST"
+    },
+    {
+      "id": "uva-fellow",
       "role": "Computational Biology Research Fellow",
       "company": "University of Virginia — Dept. of Genome Sciences",
-      "period": "Aug 2024 — Present",
+      "location": "Charlottesville, VA, USA",
+      "start": "2024-08",
+      "end": "2026-07",
+      "domains": [
+        "biomedical"
+      ],
+      "compact": false,
       "bullets": [
-        "Built a colocalization pipeline integrating Diversity-Outbred mouse GWAS with bulk RNA-seq eQTL data; designed qPCR experimental validation of loci, identifying a novel lncRNA and 2 protein-coding genes and providing a mechanistic interpretation of BMD-GWAS loci — selected as Reviewer's Choice Abstract at ASHG 2025",
-        "Identified 10+ validation-ready bone cell-type-specific (osteoblast, osteoclast) key driver genes through integration of bulk RNA-seq deconvolution and WGCNA",
-        "Performed Slingshot pseudotime trajectory analysis on scRNA-seq data generated on BMSC to identify 5 novel genes likely important for osteoblast and osteoclast differentiation"
-      ]
+        "Built a statistical data-integration pipeline on HPC joining genome-wide association and gene-expression datasets; results selected as Reviewer's Choice Abstract at ASHG 2025.",
+        "Combined deconvolution and network analysis to prioritize 10+ validation-ready candidate genes.",
+        "Ran trajectory analysis on single-cell data to identify five novel candidate genes."
+      ],
+      "logo": "assets/logos/uva.png",
+      "monogram": "UVA"
     },
     {
+      "id": "uva-analyst",
       "role": "Senior Data Analyst",
       "company": "University of Virginia — Dept. of Genome Sciences",
-      "period": "Sep 2022 — Jul 2024",
+      "location": "Charlottesville, VA, USA",
+      "start": "2022-09",
+      "end": "2024-07",
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "compact": false,
       "bullets": [
-        "Mentored a BioLab exchange student from Poland in a project building a high-throughput Low-Pass WGS pipeline for haplotype calling and eQTL analysis, cutting mouse genotyping costs 15% while preserving 98% accuracy in genotype calls",
-        "Deployed a Nextflow Long-Read Proteogenomics pipeline integrating 2 modalities (RNA-seq + targeted mass spectrometry), identifying novel isoforms absent from GENCODE (Korchak et al., JASMS 2024)",
-        "Designed FAIR data-governance standards for shared NGS infrastructure across 5+ concurrent projects through automated metadata and provenance tracking along with a version-controlled CI/CD pipeline"
-      ]
+        "Led a low-pass sequencing pipeline build (mentoring a visiting engineer) that cut genotyping cost 15% while keeping 98% call accuracy.",
+        "Led data analysis for a Nextflow multi-modal pipeline joining sequencing and mass-spectrometry data (third author, JASMS 2024).",
+        "Set data governance standards across 5+ concurrent projects: automated metadata capture, lineage tracking, and version-controlled CI/CD."
+      ],
+      "logo": "assets/logos/uva.png",
+      "monogram": "UVA"
     },
     {
+      "id": "pieriandx",
       "role": "Bioinformatician, Assay Productization",
-      "company": "PierianDx",
-      "period": "Oct 2021 — Jun 2022",
+      "company": "PierianDx (now Velsera)",
+      "location": "Pune, India",
+      "start": "2021-10",
+      "end": "2022-06",
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "compact": false,
       "bullets": [
-        "Delivered a sequence QC module for the Clinical Genomics Workspace, written with Python and WDL using the Illumina DRAGEN platform, processing 200–1,000 patient samples per week and supporting customer retention for the assay-productization team"
-      ]
+        "Delivered a sequencing QC module for the Clinical Genomics Workspace in Python and WDL on Illumina DRAGEN, processing 200–1,000 patient samples per week in a CLIA/CAP-certified, HIPAA and SOC 2 compliant environment.",
+        "Supported customer retention for the assay productization team by shipping reproducible pipeline components for clinical genomics assays.",
+        "Built a scheduling/optimization model to allocate engineering resources across concurrent productization workstreams."
+      ],
+      "logo": "assets/logos/pieriandx.png",
+      "monogram": "PDx"
     },
     {
+      "id": "ghf2030",
+      "role": "Information Technology Consultant",
+      "company": "Governing Health Futures 2030: Growing up in a digital world",
+      "company_note": "Lancet and Financial Times Commission",
+      "location": "Remote",
+      "start": "2020-10",
+      "end": "2021-09",
+      "domains": [
+        "data-eng"
+      ],
+      "compact": true,
+      "bullets": [
+        "Advised a global commission co-chaired by The Lancet and the Financial Times through architecture reviews and scalability assessments of public health data systems.",
+        "Conducted code reviews and aligned partner-platform infrastructure design with accepted engineering practice."
+      ],
+      "logo": null,
+      "monogram": "GHF"
+    },
+    {
+      "id": "csir-igib",
       "role": "Senior Project Associate",
       "company": "CSIR — Institute of Genomics and Integrative Biology (IGIB)",
-      "period": "Nov 2018 — Sep 2021",
+      "location": "New Delhi, India",
+      "start": "2018-11",
+      "end": "2021-09",
+      "domains": [
+        "biomedical",
+        "ml"
+      ],
+      "compact": false,
       "bullets": [
-        "Led the architecture design of RAPID-CT, a radiology image classification system built on a ResNet-backbone deep-learning framework for intracranial hemorrhage detection from brain CT scans that produced 98% accuracy in radiologist-based validation and reduced per-case processing time by 60%",
-        "Engineered a PII-blind REST API with a 2-key split-encryption scheme, resolving a critical privacy bottleneck for clinical informatics infrastructure",
-        "Led the development of ProMetaDB, a semi-automated annotation framework integrating 3 public repositories (PRIDE, JASPAR, iProX) to construct a tissue-specific proteome atlas"
-      ]
+        "Led architecture and development of RAPID-CT, a ResNet-backbone deep learning framework for intracranial hemorrhage detection from brain CT, reaching 98% accuracy against radiologist-labeled ground truth and cutting per-case processing time by 60%.",
+        "Engineered a PII-blind REST API with a two-key split-encryption scheme, removing a privacy bottleneck for clinical AI deployment.",
+        "Led engineering of ProMetaDB, a semi-automated annotation framework integrating PRIDE, JASPAR, and iProX to build a tissue-specific proteome atlas.",
+        "Mentored junior researchers and presented at national conferences."
+      ],
+      "logo": "assets/logos/csir-igib.png",
+      "monogram": "IGIB"
+    },
+    {
+      "id": "elucidata",
+      "role": "Intern",
+      "company": "Elucidata Corporation",
+      "location": "New Delhi, India",
+      "start": "2018-09",
+      "end": "2018-11",
+      "domains": [
+        "biomedical",
+        "data-eng"
+      ],
+      "compact": true,
+      "bullets": [
+        "Built client-facing dashboard modules for large-scale cancer genomics data, integrated into the production suite used by pharmaceutical clients."
+      ],
+      "logo": "assets/logos/elucidata.png",
+      "monogram": "EL"
+    },
+    {
+      "id": "kiit-jrf",
+      "role": "Junior Research Fellow",
+      "company": "Kalinga Institute of Industrial Technology",
+      "location": "Bhubaneswar, India",
+      "start": "2017-11",
+      "end": "2018-08",
+      "domains": [
+        "biomedical"
+      ],
+      "compact": true,
+      "bullets": [
+        "Managed the end-to-end data lifecycle from sample collection to raw data recording, with quality control enforced early in the pipeline.",
+        "Conducted genetic screening of Streptomyces chilikensis (isolated from Chilika Lake), identifying regulatory genes controlling production yields."
+      ],
+      "logo": "assets/logos/kiit.png",
+      "monogram": "KIIT"
+    }
+  ],
+  "education": [
+    {
+      "id": "uva",
+      "institution": "University of Virginia",
+      "degree": "Master of Science, Computational Biology",
+      "start": "2024-08",
+      "end": "2026-08",
+      "note": "Precision Health Initiative Trainee Stipend (2025)",
+      "logo": "assets/logos/uva.png",
+      "monogram": "UVA"
+    },
+    {
+      "id": "kiit",
+      "institution": "Kalinga Institute of Industrial Technology",
+      "degree": "B.Tech & M.Tech (Dual Degree), Biotechnology",
+      "start": "2012",
+      "end": "2017",
+      "note": null,
+      "logo": "assets/logos/kiit.png",
+      "monogram": "KIIT"
     }
   ],
   "publications": [
@@ -171,35 +1217,217 @@
       "title": "The septin cytoskeleton is a regulator of intestinal epithelial barrier integrity and mucosal inflammation",
       "journal": "JCI Insight",
       "year": 2025,
-      "doi": "10.1172/jci.insight.191538"
+      "citation": "10(22):e191538",
+      "doi": "10.1172/jci.insight.191538",
+      "author_position": {
+        "n": 9,
+        "of": 17
+      }
     },
     {
       "title": "IS-PRM-Based Peptide Targeting Informed by Long-Read Sequencing for Alternative Proteome Detection",
       "journal": "Journal of the American Society for Mass Spectrometry",
       "year": 2024,
-      "doi": "10.1021/jasms.4c00119"
+      "citation": "35(11):2614–2630",
+      "doi": "10.1021/jasms.4c00119",
+      "author_position": {
+        "n": 3,
+        "of": 9
+      }
     },
     {
       "title": "Application of Computer Assisted Bimolecular Interaction Modelling in Predictive Microbiology",
       "journal": "Journal of Advanced Microbiology",
       "year": 2020,
-      "doi": "10.5530/jam.4.1.5"
+      "citation": "4(1):59–69",
+      "doi": "10.5530/jam.4.1.5",
+      "author_position": {
+        "n": 1,
+        "of": null
+      }
     }
   ],
   "awards": [
-    "Reviewer's Choice Abstract — ASHG Annual Meeting, 2025",
-    "Precision Health Initiative Trainee Stipend — University of Virginia, 2025",
-    "Best Poster Award — National Workshop on Big Data & AI in Healthcare, 2019"
+    {
+      "id": "ashg-2025",
+      "title": "Reviewer's Choice Abstract",
+      "issuer": "ASHG Annual Meeting",
+      "year": 2025,
+      "logo": "assets/logos/ashg.png",
+      "monogram": "ASHG"
+    },
+    {
+      "id": "phi-stipend",
+      "title": "Precision Health Initiative Trainee Stipend",
+      "issuer": "University of Virginia",
+      "year": 2025,
+      "logo": "assets/logos/uva.png",
+      "monogram": "UVA"
+    },
+    {
+      "id": "best-poster",
+      "title": "Best Poster Award",
+      "issuer": "National Workshop on Big Data & AI in Healthcare",
+      "year": 2019,
+      "logo": "assets/logos/award.svg",
+      "monogram": "NW"
+    }
   ],
+  "certifications": [
+    {
+      "title": "WinCC SCADA",
+      "issuer": "Siemens",
+      "year": null,
+      "status": "completed",
+      "logo": "assets/logos/siemens.svg",
+      "monogram": "SIE"
+    },
+    {
+      "title": "Industrial Security",
+      "issuer": "Siemens",
+      "year": null,
+      "status": "completed",
+      "logo": "assets/logos/siemens.svg",
+      "monogram": "SIE"
+    },
+    {
+      "title": "Applied Machine Learning",
+      "issuer": "LinkedIn Learning",
+      "year": null,
+      "status": "completed",
+      "logo": "assets/logos/linkedin.svg",
+      "monogram": "in"
+    },
+    {
+      "title": "Data-Informed Strategic Thinking for Senior Analysts and Data Scientists",
+      "issuer": "IIBA — International Institute of Business Analysis",
+      "year": null,
+      "status": "completed",
+      "logo": "assets/logos/iiba.svg",
+      "monogram": "IIBA"
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": "Full professional"
+    },
+    {
+      "name": "Hindi",
+      "level": "Native"
+    },
+    {
+      "name": "Bengali",
+      "level": "Native"
+    },
+    {
+      "name": "Odia",
+      "level": "Limited working"
+    },
+    {
+      "name": "Polish",
+      "level": "Learning"
+    }
+  ],
+  "contact": {
+    "heading": "Let's Build the Future",
+    "reasons": [
+      "Job opportunity",
+      "Recruiter introduction",
+      "Project or consulting inquiry",
+      "Research collaboration",
+      "Other"
+    ]
+  },
   "blog": {
-    "enabled": true,
+    "enabled": false,
     "posts_dir": "blog/posts",
     "posts_per_page": 6
   },
   "design": {
     "style": "bold-modern-gradient",
-    "primary_gradient": ["#6366f1", "#8b5cf6", "#a855f7"],
+    "primary_gradient": [
+      "#6366f1",
+      "#8b5cf6",
+      "#a855f7"
+    ],
     "accent": "#06b6d4",
-    "dark_mode_default": true
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "theme_default": "system",
+    "theme_toggle": true
+  },
+  "targeting": {
+    "roles": [
+      "Data Engineer",
+      "ML Engineer",
+      "Analytics Engineer / Data Scientist"
+    ],
+    "seniority": "Senior",
+    "locations": [
+      "Katowice / Silesia (on-site)",
+      "Remote (EU)"
+    ],
+    "industries": "Industry-agnostic"
+  },
+  "currently": [
+    {
+      "label": "Data Engineer at SimTec",
+      "detail": "Industrial plant data pipelines — process historians, SCADA"
+    },
+    {
+      "label": "Learning Polish",
+      "detail": null
+    }
+  ],
+  "capabilities": {
+    "engineering_practices": [
+      "Automated testing",
+      "Code review",
+      "Design docs, schemas & API specs",
+      "Documentation & runbooks",
+      "Monitoring & alerting",
+      "On-call / incident response"
+    ],
+    "compliance": [
+      "HIPAA",
+      "SOC 2",
+      "CLIA/CAP",
+      "GDPR",
+      "ISO 27001",
+      "IEC 62443"
+    ],
+    "stakeholders": [
+      "Clinicians & scientists",
+      "Product managers & executives",
+      "Plant operators & engineers",
+      "External customers"
+    ],
+    "leadership": "Mentored 3–5 engineers and researchers"
+  },
+  "research": {
+    "summary": "Research at the University of Virginia and CSIR-IGIB in statistical genetics, single-cell analysis, and proteogenomics.",
+    "project_ids": [
+      "coloc",
+      "scrna-trajectory",
+      "proteogenomics"
+    ],
+    "highlight_award_id": "ashg-2025"
+  },
+  "i18n": {
+    "default": "en",
+    "available": [
+      "en",
+      "pl"
+    ],
+    "overlay_path": "i18n/{lang}.json",
+    "keep_in_english": [
+      "job titles",
+      "company names",
+      "technology names",
+      "publication titles"
+    ]
   }
 }

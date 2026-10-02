@@ -3,662 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Saikat Bandyopadhyay — Full-Stack Biomedical Data Scientist & Clinical Pipeline Architect. Decoding the language of life to end human suffering.">
-  <meta property="og:title" content="Saikat Bandyopadhyay — Portfolio">
-  <meta property="og:description" content="Decoding the language of life to end human suffering. Clinical-grade pipeline design, Healthcare AI, Multi-Omics Integration.">
-  <meta property="og:type" content="website">
-  <title>Saikat Bandyopadhyay — Full-Stack Biomedical Data Scientist & Clinical Pipeline Architect</title>
-
-  <!-- Fonts -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Saikat Bandyopadhyay — Senior Data Engineer</title>
+  <meta name="description" content="Saikat Bandyopadhyay — Senior Data Engineer. Data pipelines, databases, and ML systems for regulated and industrial environments. Katowice, Poland / remote EU.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sktbanerjee1.github.io/portfolio/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Saikat Bandyopadhyay — Senior Data Engineer">
+  <meta property="og:description" content="Data pipelines, databases, and ML systems for regulated and industrial environments.">
+  <meta property="og:url" content="https://sktbanerjee1.github.io/portfolio/">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="dark light">
+  <script src="theme-init.js?v=476b643a55"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Animation Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=3c99c290fb">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saikat Bandyopadhyay",
+    "jobTitle": "Senior Data Engineer",
+    "url": "https://sktbanerjee1.github.io/portfolio/",
+    "email": "mailto:saikat.bandyopadhyay.dsx@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Katowice", "addressCountry": "PL" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Virginia" },
+      { "@type": "CollegeOrUniversity", "name": "Kalinga Institute of Industrial Technology" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/s-bandyopadhyay-",
+      "https://github.com/Sktbanerjee1",
+      "https://scholar.google.com/citations?hl=en&user=rd9BjkYAAAAJ"
+    ],
+    "knowsAbout": ["Data Engineering", "Machine Learning", "PostgreSQL", "Python", "SQL", "AWS", "Nextflow", "Industrial data systems"]
+  }
+  </script>
+  <script src="app.js?v=ded3154370" defer></script>
 </head>
-<body>
-  <!-- Skip Navigation -->
-  <a href="#main-content" class="skip-nav">Skip to main content</a>
+<body data-page="home">
+  <a href="#main" class="skip-link" data-i18n="skip">Skip to main content</a>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- Three.js Canvas Background -->
-  <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
-  <!-- Navigation -->
-  <header>
-    <nav class="main-nav" aria-label="Main navigation">
-      <div class="nav-container">
-        <a href="#hero" class="nav-logo gradient-text">SB</a>
-        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a href="#top" class="nav-logo" id="nav-logo" data-i18n-aria="aria.home" aria-label="Home">SB</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#research" data-i18n="nav.research">Research</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" id="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language" hidden>
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="pl" aria-pressed="false">PL</button>
+        </div>
+        <button type="button" class="icon-btn" id="theme-toggle" data-i18n-aria="theme.toggle" aria-label="Toggle light/dark theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         </button>
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#experience" class="nav-link">Journey</a></li>
-          <li><a href="#publications" class="nav-link">Publications</a></li>
-          <li><a href="#blog-preview" class="nav-link">Blog</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
       </div>
+      <button class="nav-toggle icon-btn" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" data-i18n-aria="menu.toggle" aria-label="Toggle navigation menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </nav>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
-
-    <!-- ============================== -->
-    <!-- HERO SECTION -->
-    <!-- ============================== -->
-    <section id="hero" class="hero-section">
-      <div class="hero-content">
-        <p class="hero-greeting reveal-up">Hello, I'm</p>
-        <h1 class="hero-name gradient-text reveal-up">Saikat Bandyopadhyay</h1>
-        <div class="hero-typed-wrapper reveal-up">
-          <span class="hero-typed-prefix">I'm a </span>
-          <span id="typed-output"></span>
+  <main id="main" tabindex="-1">
+    <section id="top" class="hero container" aria-labelledby="hero-name">
+      <div class="hero-main">
+        <p class="hero-greeting" data-bind="hero.greeting">Hello, I'm</p>
+        <h1 id="hero-name" class="hero-name gradient-text" data-bind="meta.name">Saikat Bandyopadhyay</h1>
+        <p class="hero-role"><span class="sr-only" data-bind="meta.title">Senior Data Engineer</span><span id="typed" aria-hidden="true">Senior Data Engineer</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="hero-sub" data-bind="meta.subtitle"></p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" id="cta-primary" href="#projects"></a>
+          <a class="btn btn-ghost" id="cta-secondary" href="#contact"></a>
         </div>
-        <p class="hero-tagline reveal-up">Decoding complex systems with data</p>
-        <div class="hero-cta-group reveal-up">
-          <a href="#projects" class="hero-cta">
-            Explore My Mission
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#contact" class="hero-cta-secondary">Get In Touch</a>
-        </div>
+        <ul class="social" id="social" data-i18n-aria="aria.profiles" aria-label="Profiles"></ul>
       </div>
-      <div class="hero-scroll-indicator" aria-hidden="true">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Scroll to explore</span>
+      <aside class="card currently" aria-labelledby="currently-title">
+        <h2 id="currently-title" class="card-kicker" data-i18n="currently.title">Currently</h2>
+        <ul id="currently-list"></ul>
+      </aside>
+    </section>
+
+    <section class="container stats-wrap" data-i18n-aria="aria.key_figures" aria-label="Key figures">
+      <dl class="stats" id="stats"></dl>
+    </section>
+
+    <section id="about" class="section container" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title reveal" data-i18n="about.title">About</h2>
+      <div class="about-grid">
+        <div class="about-text" id="about-text"></div>
+        <ul class="highlights" id="highlights"></ul>
       </div>
     </section>
 
-    <!-- ============================== -->
-    <!-- ABOUT SECTION -->
-    <!-- ============================== -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">About</h2>
+    <section id="projects" class="section container" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title reveal" data-i18n="projects.title">Selected projects</h2>
+      <div class="chip-row" id="domain-filter" role="group" data-i18n-aria="aria.filter_domain" aria-label="Filter projects by domain"></div>
+      <p class="filter-status" id="filter-status" aria-live="polite"></p>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
 
-        <div class="about-grid">
-          <div class="about-bio reveal-up">
-            <p class="about-text">
-              I am an engineer focused on building next-generation data solutions.
-            </p>
-            <p class="about-text">
-              Increasing data volume across domains requires <strong>scalable</strong>, <strong>robust</strong>, <strong>auditable</strong> processes and data pipelines to generate actionable business intelligence.
-            </p>
-            <p class="about-text">
-              I bring systems design, data-driven storytelling, and production-grade software development to engineering teams tackling hard problems.
-            </p>
-          </div>
-          <div class="about-highlights stagger-container">
-            <div class="glass-card highlight-card">
-              <div class="highlight-card-header">
-                <div class="highlight-icon">
-                  <!-- Gear icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                  </svg>
-                </div>
-                <h3 class="highlight-label">Production-Grade</h3>
-              </div>
-              <p class="highlight-value">Scalable software design with CI/CD discipline, containerized deployments, and data security built in from day one</p>
-            </div>
-            <div class="glass-card highlight-card">
-              <div class="highlight-card-header">
-                <div class="highlight-icon">
-                  <!-- Shield-check icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <polyline points="9 12 11 14 15 10"></polyline>
-                  </svg>
-                </div>
-                <h3 class="highlight-label">Audit-Ready</h3>
-              </div>
-              <p class="highlight-value">Traceable, fault-tolerant systems for highly regulated environments &mdash; CLIA/CAP, HIPAA/SOC 2, healthcare, and industrial compliance</p>
-            </div>
-            <div class="glass-card highlight-card">
-              <div class="highlight-card-header">
-                <div class="highlight-icon">
-                  <!-- Lock icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
-                </div>
-                <h3 class="highlight-label">Data Security</h3>
-              </div>
-              <p class="highlight-value">PII-blind architectures, split-key encryption, and privacy-preserving inference pipelines for sensitive clinical and genomic data</p>
-            </div>
-            <div class="glass-card highlight-card">
-              <div class="highlight-card-header">
-                <div class="highlight-icon">
-                  <!-- Brain icon -->
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44A2.5 2.5 0 0 1 5 17.5a2.5 2.5 0 0 1-.96-4.81A2.5 2.5 0 0 1 5 8.5a2.5 2.5 0 0 1 1.77-2.39A2.5 2.5 0 0 1 9.5 2z"></path>
-                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44A2.5 2.5 0 0 0 19 17.5a2.5 2.5 0 0 0 .96-4.81A2.5 2.5 0 0 0 19 8.5a2.5 2.5 0 0 0-1.77-2.39A2.5 2.5 0 0 0 14.5 2z"></path>
-                  </svg>
-                </div>
-                <h3 class="highlight-label">Deep Learning</h3>
-              </div>
-              <p class="highlight-value">Statistical modeling, mathematical simulation, and neural networks &mdash; from Bayesian causal inference to real-time medical image classification</p>
-            </div>
-          </div>
-        </div>
+    <section id="skills" class="section container" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title reveal" data-i18n="skills.title">Skills</h2>
+      <p class="muted" data-i18n="skills.hint">Select a skill to highlight related projects.</p>
+      <p class="filter-status" id="skill-status" aria-live="polite"></p>
+      <div class="chip-row view-toggle" id="skills-view" role="group" data-i18n-aria="skills.view.label" aria-label="Skills view">
+        <button type="button" class="chip" data-view="network" aria-pressed="true" data-i18n="skills.view.network">Network</button>
+        <button type="button" class="chip" data-view="list" aria-pressed="false" data-i18n="skills.view.list">List</button>
+      </div>
+      <div class="card skill-network" id="skill-network"></div>
+      <div class="skill-groups" id="skill-groups"></div>
+    </section>
+
+    <section id="experience" class="section container" aria-labelledby="exp-title">
+      <h2 id="exp-title" class="section-title reveal" data-i18n="experience.title">Experience</h2>
+      <ol class="timeline" id="timeline"></ol>
+      <details class="earlier" id="earlier">
+        <summary data-i18n="experience.more">Earlier roles</summary>
+        <ol class="timeline compact" id="timeline-compact"></ol>
+      </details>
+    </section>
+
+    <section id="capabilities" class="section container" aria-labelledby="cap-title">
+      <h2 id="cap-title" class="section-title reveal" data-i18n="capabilities.title">How I work</h2>
+      <div class="cap-grid" id="cap-grid"></div>
+    </section>
+
+    <section id="research" class="section container" aria-labelledby="research-title">
+      <h2 id="research-title" class="section-title reveal" data-i18n="research.title">Research</h2>
+      <p class="lead" id="research-summary"></p>
+      <ul class="research-list" id="research-list"></ul>
+      <h3 class="sub-title" data-i18n="publications.title">Publications</h3>
+      <ol class="pubs" id="pubs"></ol>
+    </section>
+
+    <section id="credentials" class="section container" aria-labelledby="cred-title">
+      <h2 id="cred-title" class="sr-only" data-i18n="credentials.title">Education and credentials</h2>
+      <div class="cred-grid">
+        <div class="card"><h3 class="card-kicker" data-i18n="education.title">Education</h3><ul class="plain" id="education"></ul></div>
+        <div class="card"><h3 class="card-kicker" data-i18n="certifications.title">Certifications</h3><ul class="plain" id="certs"></ul></div>
+        <div class="card"><h3 class="card-kicker" data-i18n="awards.title">Honors</h3><ul class="plain" id="awards"></ul></div>
+        <div class="card"><h3 class="card-kicker" data-i18n="languages.title">Languages</h3><ul class="plain" id="languages"></ul></div>
       </div>
     </section>
 
-    <!-- ============================== -->
-    <!-- PROJECTS SECTION -->
-    <!-- ============================== -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">Projects</h2>
-        <p class="section-subtitle"></p>
-
-        <!-- Interactive Project Timeline -->
-        <div class="project-timeline-wrapper reveal-up" id="project-timeline">
-          <div class="timeline-axis">
-            <div class="timeline-years" id="timeline-years"></div>
-            <div class="timeline-track" id="timeline-track"></div>
-          </div>
-          <div class="timeline-tooltip" id="timeline-tooltip">
-            <div class="tooltip-header">
-              <h4 class="tooltip-title" id="tooltip-title"></h4>
-              <span class="tooltip-period" id="tooltip-period"></span>
-            </div>
-            <canvas id="tooltip-donut" width="160" height="160"></canvas>
-            <div class="tooltip-legend" id="tooltip-legend"></div>
-          </div>
-        </div>
-
-        <div class="projects-grid stagger-container">
-
-          <!-- Project 1: RAPID-CT -->
-          <article class="glass-card project-card featured-project">
-            <div class="project-badge">Featured</div>
-            <div class="project-header">
-              <h3 class="project-title">RAPID-CT: AI-Powered Brain Hemorrhage Detection</h3>
-            </div>
-            <p class="project-desc">Deep learning framework detecting Intracranial Hemorrhage from brain CT scans using segmentation-based ResNet architecture. Engineered a PII-blind REST API with split-key encryption for clinical deployment.</p>
-            <p class="project-outcome"><strong>Impact:</strong> Produced 98% accuracy in radiologist-based validation and reduced per-case processing time by 60% via clinical-grade AI inference pipeline</p>
-            <div class="project-tech">
-              <span class="tech-badge">PyTorch</span>
-              <span class="tech-badge">ResNet</span>
-              <span class="tech-badge">Medical Imaging</span>
-              <span class="tech-badge">REST API</span>
-              <span class="tech-badge">Encryption</span>
-            </div>
-          </article>
-
-          <!-- Project 2: Colocalization -->
-          <article class="glass-card project-card">
-            <div class="project-header">
-              <h3 class="project-title">Causal Gene Discovery Pipeline</h3>
-            </div>
-            <p class="project-desc">Computational colocalization pipeline integrating GWAS and bulk RNA-seq eQTL data to identify candidate causal genes in Diversity Outbred mice. Implemented conditional analysis with bootstrapping to validate concordance between signals.</p>
-            <p class="project-outcome"><strong>Impact:</strong> Identified a novel lncRNA and 2 protein-coding genes providing mechanistic interpretation of BMD-GWAS loci &mdash; selected as Reviewer&rsquo;s Choice Abstract at ASHG 2025</p>
-            <div class="project-tech">
-              <span class="tech-badge">R</span>
-              <span class="tech-badge">coloc</span>
-              <span class="tech-badge">bnlearn</span>
-              <span class="tech-badge">GWAS</span>
-              <span class="tech-badge">eQTL</span>
-              <span class="tech-badge">HPC/SLURM</span>
-            </div>
-          </article>
-
-          <!-- Project 3: Proteogenomics -->
-          <article class="glass-card project-card">
-            <div class="project-header">
-              <h3 class="project-title">Proteogenomics: Beyond the Reference Proteome</h3>
-            </div>
-            <p class="project-desc">Nextflow-based pipeline integrating long-read RNA sequencing with mass spectrometry to discover novel transcript isoforms and protein products absent from GENCODE annotations.</p>
-            <p class="project-outcome"><strong>Impact:</strong> Identified novel isoforms absent from GENCODE by integrating 2 modalities (RNA-seq + targeted mass spectrometry) &mdash; published in <em>JASMS</em> 2024</p>
-            <div class="project-tech">
-              <span class="tech-badge">Nextflow</span>
-              <span class="tech-badge">Long-Read Seq</span>
-              <span class="tech-badge">Mass Spectrometry</span>
-              <span class="tech-badge">Proteomics</span>
-            </div>
-          </article>
-
-          <!-- Project 4: Single-Cell -->
-          <article class="glass-card project-card">
-            <div class="project-header">
-              <h3 class="project-title">Single-Cell Trajectory Analysis of Bone Marrow</h3>
-            </div>
-            <p class="project-desc">Pseudotime trajectory analysis on single-cell RNA-seq data characterizing gene expression dynamics along osteoblast and osteoclast differentiation &mdash; mapping the molecular choreography of bone formation.</p>
-            <p class="project-outcome"><strong>Impact:</strong> Identified 5 novel genes likely important for osteoblast and osteoclast differentiation from BMSC scRNA-seq data</p>
-            <div class="project-tech">
-              <span class="tech-badge">Slingshot</span>
-              <span class="tech-badge">scRNA-seq</span>
-              <span class="tech-badge">WGCNA</span>
-              <span class="tech-badge">Bayesian Networks</span>
-            </div>
-          </article>
-
-          <!-- Project 5: LP-WGS -->
-          <article class="glass-card project-card">
-            <div class="project-header">
-              <h3 class="project-title">Low-Pass WGS Processing Pipeline</h3>
-            </div>
-            <p class="project-desc">High-throughput processing pipeline for Low-Pass Whole Genome Sequencing achieving 15% reduction in genotyping costs while maintaining fidelity for downstream haplotype calling and eQTL analysis.</p>
-            <p class="project-outcome"><strong>Impact:</strong> Cut mouse genotyping costs 15% while preserving 98% accuracy in genotype calls for downstream haplotype calling and eQTL analysis</p>
-            <div class="project-tech">
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Bash</span>
-              <span class="tech-badge">SLURM</span>
-              <span class="tech-badge">WGS</span>
-              <span class="tech-badge">Imputation</span>
-            </div>
-          </article>
-
-          <!-- Project 6: FAIR -->
-          <article class="glass-card project-card">
-            <div class="project-header">
-              <h3 class="project-title">FAIR Data Governance Framework</h3>
-            </div>
-            <p class="project-desc">Architected a standardized data governance framework enforcing FAIR principles across all research data assets &mdash; transforming an unstructured research environment into a reproducible, audit-ready ecosystem.</p>
-            <p class="project-outcome"><strong>Impact:</strong> Standardized FAIR data-governance for shared NGS infrastructure across 5+ concurrent projects via automated metadata, provenance tracking, and CI/CD</p>
-            <div class="project-tech">
-              <span class="tech-badge">FAIR Principles</span>
-              <span class="tech-badge">Data Governance</span>
-              <span class="tech-badge">ETL</span>
-              <span class="tech-badge">Metadata Standards</span>
-            </div>
-          </article>
-
+    <section id="contact" class="section container" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title reveal" data-bind="contact.heading">Contact</h2>
+      <div class="contact-grid">
+        <form class="card contact-form" id="contact-form" novalidate>
+          <label for="cf-name" data-i18n="contact.name">Your name</label>
+          <input id="cf-name" name="name" autocomplete="name" required maxlength="100">
+          <label for="cf-email" data-i18n="contact.email">Your email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="200">
+          <label for="cf-reason" data-i18n="contact.reason">Reason for reaching out</label>
+          <select id="cf-reason" name="reason" required></select>
+          <label for="cf-msg" data-i18n="contact.message">Message</label>
+          <textarea id="cf-msg" name="message" rows="5" required maxlength="3000"></textarea>
+          <p class="form-error" id="cf-error" role="alert"></p>
+          <button class="btn btn-primary" type="submit" data-i18n="contact.submit">Compose email</button>
+          <p class="muted small" data-i18n="contact.note">Opens your email client with a pre-filled message.</p>
+        </form>
+        <div class="card">
+          <h3 class="card-kicker" data-i18n="contact.direct">Connect directly</h3>
+          <p><a id="contact-email" class="link"></a></p>
+          <p class="muted" data-bind="meta.location"></p>
+          <p class="muted" data-bind="meta.availability"></p>
         </div>
       </div>
     </section>
-
-    <!-- ============================== -->
-    <!-- SKILLS SECTION -->
-    <!-- ============================== -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">Skills</h2>
-        <p class="section-subtitle"></p>
-
-        <!-- Hub-and-spoke skill network visualization -->
-        <div class="skill-network-wrapper reveal-up" id="skill-network">
-          <svg class="skill-network-svg" id="skill-network-svg" aria-label="Interactive skill network"></svg>
-          <div class="skill-network-tooltip" id="skill-network-tooltip">
-            <span class="tooltip-label" id="skill-tooltip-label"></span>
-            <span class="tooltip-sub" id="skill-tooltip-sub"></span>
-          </div>
-        </div>
-        <div class="skill-network-legend" id="skill-network-legend"></div>
-
-        <details class="skills-fallback">
-          <summary>View as a compact list</summary>
-        <div class="skills-grid stagger-container">
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">Clinical Pipeline Design</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">CLIA/CAP Compliance</span>
-              <span class="tech-badge">HIPAA/SOC 2</span>
-              <span class="tech-badge">Automated Validation Gates</span>
-              <span class="tech-badge">Audit Trail Logging</span>
-              <span class="tech-badge">Redundancy &amp; Failover</span>
-              <span class="tech-badge">Real-Time QC Monitoring</span>
-            </div>
-          </div>
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">Pipeline Engineering</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">Nextflow</span>
-              <span class="tech-badge">Snakemake</span>
-              <span class="tech-badge">WDL/CWL</span>
-              <span class="tech-badge">Illumina DRAGEN</span>
-              <span class="tech-badge">SLURM/HPC</span>
-              <span class="tech-badge">Docker/Singularity</span>
-              <span class="tech-badge">FAIR Governance</span>
-              <span class="tech-badge">Automated ETL</span>
-            </div>
-          </div>
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">Statistical Genetics &amp; Causal Inference</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">GWAS</span>
-              <span class="tech-badge">eQTL Mapping</span>
-              <span class="tech-badge">Colocalization (coloc)</span>
-              <span class="tech-badge">Conditional Analysis w/ Bootstrapping</span>
-              <span class="tech-badge">Bayesian Networks (bnlearn)</span>
-              <span class="tech-badge">Mendelian Randomization</span>
-            </div>
-          </div>
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">Genomics &amp; Multi-Omics</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">WGS/LP-WGS</span>
-              <span class="tech-badge">DNA-seq</span>
-              <span class="tech-badge">Long-Read RNA-seq</span>
-              <span class="tech-badge">ChIP-seq/Cut&amp;Run</span>
-              <span class="tech-badge">Proteogenomics</span>
-              <span class="tech-badge">Variant Calling</span>
-            </div>
-          </div>
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">ML/DL &amp; Public Data</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">ResNet CNNs</span>
-              <span class="tech-badge">Medical Image Segmentation</span>
-              <span class="tech-badge">Cancer Genomics</span>
-              <span class="tech-badge">TCGA</span>
-              <span class="tech-badge">CPTAC</span>
-              <span class="tech-badge">GENCODE</span>
-              <span class="tech-badge">SRA</span>
-              <span class="tech-badge">GEO</span>
-              <span class="tech-badge">PRIDE</span>
-            </div>
-          </div>
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">Single-Cell & Network Biology</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">scRNA-seq</span>
-              <span class="tech-badge">Slingshot</span>
-              <span class="tech-badge">WGCNA</span>
-              <span class="tech-badge">Cell-Type Deconvolution</span>
-              <span class="tech-badge">Hub Gene ID</span>
-              <span class="tech-badge">Gene Regulatory Networks</span>
-            </div>
-          </div>
-
-          <div class="glass-card skill-group">
-            <h3 class="skill-group-title">Programming &amp; Tools</h3>
-            <div class="skill-badges">
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">R</span>
-              <span class="tech-badge">Bash</span>
-              <span class="tech-badge">SQL</span>
-              <span class="tech-badge">Git</span>
-              <span class="tech-badge">Linux/Unix</span>
-              <span class="tech-badge">SLURM/HPC</span>
-              <span class="tech-badge">Cloud Computing</span>
-              <span class="tech-badge">REST APIs</span>
-              <span class="tech-badge">Jupyter</span>
-              <span class="tech-badge">R Markdown</span>
-            </div>
-          </div>
-
-        </div>
-        </details>
-      </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- EXPERIENCE / JOURNEY SECTION -->
-    <!-- ============================== -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">Journey</h2>
-        <p class="section-subtitle"></p>
-
-        <div class="timeline">
-
-          <div class="timeline-item reveal-up">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-role">Computational Biology Research Fellow</h3>
-                <span class="timeline-period">Aug 2024 &mdash; Present</span>
-              </div>
-              <p class="timeline-company">University of Virginia &mdash; Dept. of Genome Sciences</p>
-              <ul class="timeline-bullets">
-                <li>Built a colocalization pipeline integrating Diversity-Outbred mouse GWAS with bulk RNA-seq eQTL data; designed qPCR experimental validation of loci, identifying a novel lncRNA and 2 protein-coding genes and providing a mechanistic interpretation of BMD-GWAS loci &mdash; selected as Reviewer&rsquo;s Choice Abstract at ASHG 2025</li>
-                <li>Identified 10+ validation-ready bone cell-type-specific (osteoblast, osteoclast) key driver genes through integration of bulk RNA-seq deconvolution and WGCNA</li>
-                <li>Performed Slingshot pseudotime trajectory analysis on scRNA-seq data generated on BMSC to identify 5 novel genes likely important for osteoblast and osteoclast differentiation</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-role">Senior Data Analyst</h3>
-                <span class="timeline-period">Sep 2022 &mdash; Jul 2024</span>
-              </div>
-              <p class="timeline-company">University of Virginia &mdash; Dept. of Genome Sciences</p>
-              <ul class="timeline-bullets">
-                <li>Mentored a BioLab exchange student from Poland in a project building a high-throughput Low-Pass WGS pipeline for haplotype calling and eQTL analysis, cutting mouse genotyping costs 15% while preserving 98% accuracy in genotype calls</li>
-                <li>Deployed a Nextflow Long-Read Proteogenomics pipeline integrating 2 modalities (RNA-seq + targeted mass spectrometry), identifying novel isoforms absent from GENCODE (Korchak et al., <em>JASMS</em> 2024)</li>
-                <li>Designed FAIR data-governance standards for shared NGS infrastructure across 5+ concurrent projects through automated metadata and provenance tracking along with a version-controlled CI/CD pipeline</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-role">Bioinformatician, Assay Productization</h3>
-                <span class="timeline-period">Oct 2021 &mdash; Jun 2022</span>
-              </div>
-              <p class="timeline-company">PierianDx</p>
-              <ul class="timeline-bullets">
-                <li>Delivered a sequence QC module for the Clinical Genomics Workspace, written with Python and WDL using the Illumina DRAGEN platform, processing 200&ndash;1,000 patient samples per week and supporting customer retention for the assay-productization team</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up">
-            <div class="timeline-marker"></div>
-            <div class="glass-card timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-role">Senior Project Associate</h3>
-                <span class="timeline-period">Nov 2018 &mdash; Sep 2021</span>
-              </div>
-              <p class="timeline-company">CSIR &mdash; Institute of Genomics and Integrative Biology (IGIB)</p>
-              <ul class="timeline-bullets">
-                <li>Led the architecture design of RAPID-CT, a radiology image classification system built on a ResNet-backbone deep-learning framework for intracranial hemorrhage detection from brain CT scans that produced 98% accuracy in radiologist-based validation and reduced per-case processing time by 60%</li>
-                <li>Engineered a PII-blind REST API with a 2-key split-encryption scheme, resolving a critical privacy bottleneck for clinical informatics infrastructure</li>
-                <li>Led the development of ProMetaDB, a semi-automated annotation framework integrating 3 public repositories (PRIDE, JASPAR, iProX) to construct a tissue-specific proteome atlas</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- PUBLICATIONS SECTION -->
-    <!-- ============================== -->
-    <section id="publications" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">Published Works</h2>
-        <p class="section-subtitle"></p>
-
-        <div class="publications-list stagger-container">
-
-          <article class="glass-card publication-card">
-            <div class="pub-year">2025</div>
-            <div class="pub-content">
-              <h3 class="pub-title">The septin cytoskeleton is a regulator of intestinal epithelial barrier integrity and mucosal inflammation</h3>
-              <p class="pub-journal"><em>JCI Insight</em>, 10(22):e191538</p>
-              <a href="https://doi.org/10.1172/jci.insight.191538" target="_blank" rel="noopener noreferrer" class="pub-doi">DOI: 10.1172/jci.insight.191538</a>
-            </div>
-          </article>
-
-          <article class="glass-card publication-card">
-            <div class="pub-year">2024</div>
-            <div class="pub-content">
-              <h3 class="pub-title">IS-PRM-Based Peptide Targeting Informed by Long-Read Sequencing for Alternative Proteome Detection</h3>
-              <p class="pub-journal"><em>Journal of the American Society for Mass Spectrometry</em>, 35(11):2614&ndash;2630</p>
-              <a href="https://doi.org/10.1021/jasms.4c00119" target="_blank" rel="noopener noreferrer" class="pub-doi">DOI: 10.1021/jasms.4c00119</a>
-            </div>
-          </article>
-
-          <article class="glass-card publication-card">
-            <div class="pub-year">2020</div>
-            <div class="pub-content">
-              <h3 class="pub-title">Application of Computer Assisted Bimolecular Interaction Modelling in Predictive Microbiology</h3>
-              <p class="pub-journal"><em>Journal of Advanced Microbiology</em>, 4(1):59&ndash;69</p>
-              <a href="https://doi.org/10.5530/jam.4.1.5" target="_blank" rel="noopener noreferrer" class="pub-doi">DOI: 10.5530/jam.4.1.5</a>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Awards -->
-        <div class="awards-section reveal-up">
-          <h3 class="awards-title gradient-text">Honors & Recognition</h3>
-          <div class="awards-grid stagger-container">
-            <div class="glass-card award-card">
-              <span class="award-icon" aria-hidden="true">&#9733;</span>
-              <p class="award-text">Reviewer's Choice Abstract &mdash; ASHG Annual Meeting, 2025</p>
-            </div>
-            <div class="glass-card award-card">
-              <span class="award-icon" aria-hidden="true">&#9733;</span>
-              <p class="award-text">Precision Health Initiative Trainee Stipend &mdash; University of Virginia, 2025</p>
-            </div>
-            <div class="glass-card award-card">
-              <span class="award-icon" aria-hidden="true">&#9733;</span>
-              <p class="award-text">Best Poster Award &mdash; National Workshop on Big Data & AI in Healthcare, 2019</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- BLOG PREVIEW SECTION -->
-    <!-- ============================== -->
-    <section id="blog-preview" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">Blog</h2>
-        <p class="section-subtitle"></p>
-
-        <div class="blog-preview-grid stagger-container" id="blog-preview-posts">
-          <!-- Populated by script.js -->
-        </div>
-
-        <div class="blog-view-all reveal-up">
-          <a href="blog.html" class="hero-cta-secondary">View All Posts</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== -->
-    <!-- CONTACT SECTION -->
-    <!-- ============================== -->
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-heading gradient-text">Let's Build the Future</h2>
-        <p class="section-subtitle"></p>
-
-        <div class="contact-layout reveal-up">
-
-          <!-- Contact Form -->
-          <div class="glass-card contact-form-card">
-            <h3 class="contact-form-title">Send Me a Message</h3>
-            <form id="contact-form" class="contact-form" novalidate>
-              <div class="form-group">
-                <label for="contact-name" class="form-label">Your Name</label>
-                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Jane Doe" required>
-              </div>
-              <div class="form-group">
-                <label for="contact-email" class="form-label">Your Email</label>
-                <input type="email" id="contact-email" name="email" class="form-input" placeholder="jane@example.com" required>
-              </div>
-              <div class="form-group">
-                <label for="contact-reason" class="form-label">Reason for Reaching Out</label>
-                <select id="contact-reason" name="reason" class="form-input form-select" required>
-                  <option value="" disabled selected>Select a reason...</option>
-                  <option value="Job Opportunity">Job Opportunity</option>
-                  <option value="Collaboration">Research / Project Collaboration</option>
-                  <option value="Public Talk">Invitation to Speak / Public Talk</option>
-                  <option value="Consulting">Consulting Inquiry</option>
-                  <option value="General">General Question / Say Hello</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="contact-message" class="form-label">Message</label>
-                <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Tell me what you have in mind..." rows="5" required></textarea>
-              </div>
-              <button type="submit" class="form-submit hero-cta">
-                Compose Email
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-              </button>
-              <p class="form-note">This will open your email client with a pre-filled message.</p>
-            </form>
-          </div>
-
-          <!-- Social & Info Sidebar -->
-          <div class="glass-card contact-card">
-            <div class="contact-info">
-              <h3 class="contact-form-title">Connect Directly</h3>
-              <a href="mailto:saikat.bandyopadhyay.dsx@gmail.com" class="contact-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                saikat.bandyopadhyay.dsx@gmail.com
-              </a>
-              <div class="contact-social">
-                <a href="https://github.com/Sktbanerjee1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/sbandyopadhyay-" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-                <!-- TODO: Replace with your Google Scholar URL -->
-                <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Google Scholar">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <p class="contact-closing">Based in Charlottesville, VA. Open to Healthcare AI, BioML, and Data Science opportunities.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Saikat Bandyopadhyay.</p>
-    </div>
+  <footer class="site-footer container">
+    <p>&copy; <span id="year">2026</span> Saikat Bandyopadhyay · <span data-i18n="footer.built">Built with plain HTML, CSS and JavaScript.</span></p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <noscript><p class="container">Saikat Bandyopadhyay — Senior Data Engineer. Email: saikat.bandyopadhyay.dsx@gmail.com · LinkedIn: linkedin.com/in/s-bandyopadhyay-</p></noscript>
 </body>
 </html>
